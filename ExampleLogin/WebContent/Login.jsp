@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- create a form with 2 fields and 2 buttons -->
-<form action="LoginServlet" method="Post">
+<form action="LoginServlet" method="post">
 userName:<input type="text" Name="userName">
 password:<input type="password" Name="password">
          <input type="submit" value="login">

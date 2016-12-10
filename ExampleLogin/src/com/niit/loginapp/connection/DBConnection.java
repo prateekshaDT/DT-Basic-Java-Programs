@@ -7,7 +7,7 @@ import com.sun.corba.se.pept.transport.Connection;
 
 public class DBConnection {
 	private static String userName="sa";
-	private static String password="sa";
+	private static String password="";
 	private static String url="jdbc:h2:tcp://localhost/~/test";
 	private static String driver="org.h2.Driver";
 	
