@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>css image placement</title>
-</style type="text/css" media="screen">
+<style> type="text/css" media="screen"
 #headline
 {
 background-image:url(images /newsletter_headline.gif);
@@ -17,7 +17,7 @@ margin-bottom:50px;
 </style>
 </head>
 <body>
-<div id="headline /">some text__</div>
+<div id="headline /">pratheeksha</div>
 
 </body>
 </html>
