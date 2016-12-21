@@ -2,6 +2,7 @@
 package com.niit.shoppingcart.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
@@ -15,6 +16,27 @@ public class HomeController {
 		return "home";
 		
 	}
+	@RequestMapping("/login")
+	public ModelAndView showLoginpage()
+	{
+		ModelAndView mv=new ModelAndView("home");
+		mv.addObject("msg","you clicked login link");
+		mv.addObject("showLoginpage");
+		
+		return mv;
 	
+	}
+	
+    
+	@RequestMapping("/register")
+	public ModelAndView showRegistrationpage()
+	{
+		ModelAndView mv=new ModelAndView("home");
+	mv.addObject("msg","you clicked registration link");
+	mv.addObject("showRegistrationpage");
+	
+	return mv;
+		
+	}
 
 }
