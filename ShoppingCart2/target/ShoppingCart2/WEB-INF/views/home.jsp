@@ -56,10 +56,16 @@
                         <a class="page-scroll" href="#download">Download</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#features">Features</a>
+                        <a class="page-scroll" href="login"> Login</a>
+                        <c:if test="${showloginpage}">
+                        <jsp:include page="login.jsp"></jsp:include>
+                        </c:if>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="register"> register</a>
+                         <c:if test="${showregistrationpage}">
+                        <jsp:include page="registration.jsp"></jsp:include>
+                        </c:if>
                     </li>
                 </ul>
             </div>

@@ -21,19 +21,19 @@ public class HomeController {
 	{
 		ModelAndView mv=new ModelAndView("home");
 		mv.addObject("msg","you clicked login link");
-		mv.addObject("showLoginpage");
+		mv.addObject("showLoginpage","true");
 		
 		return mv;
 	
 	}
 	
     
-	@RequestMapping("/register")
+	@RequestMapping("/registration")
 	public ModelAndView showRegistrationpage()
 	{
 		ModelAndView mv=new ModelAndView("home");
 	mv.addObject("msg","you clicked registration link");
-	mv.addObject("showRegistrationpage");
+	mv.addObject("showRegistrationpage","true");
 	
 	return mv;
 		

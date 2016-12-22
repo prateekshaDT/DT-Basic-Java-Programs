@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <head>
 
     <meta charset="utf-8">
@@ -10,235 +9,178 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>Business Casual - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="resource/css/bootstrap.min.css"/>" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="<c:url value="resource/css/business-casual.css"/>" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="resource/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resource/vendor/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="resource/vendor/device-mockups/device-mockups.min.css">
-
-    <!-- Theme CSS -->
-    <link href="resource/css/new-age.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="<c:url value="resource/https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="resource/https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"/>" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="<c:url value="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"/>"></script>
-        <script src="<c:url value="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"/>"></script>
+        <script src="<c:url value="resource/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"/>"></script>
+        <script src="<c:url value="resource/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"/>"></script>
     <![endif]-->
 
 </head>
 
-<body id="page-top" backdround="bg-cta.jpg">
+<body>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="brand">Business Casual</div>
+    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="resource/home.jsp">Business Casual</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a href="home">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="login"> Login</a>
-                        <c:if test="${showloginpage}">
+                        <a href="login">Login</a>
+                        <c:if test="${showLoginpage}">
                         <jsp:include page="login.jsp"></jsp:include>
                         </c:if>
                     </li>
                     <li>
-                        <a class="page-scroll" href="register"> register</a>
-                         <c:if test="${showregistrationpage}">
+                        <a href="registration">Registration</a>
+                         <c:if test="${showRegistrationpage}">
                         <jsp:include page="registration.jsp"></jsp:include>
                         </c:if>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.container -->
     </nav>
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="resource/img/demo-screen-1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="container">
 
-    <section id="download" class="download bg-primary text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on any mobile device! Download now to get started!</p>
-                    <div class="badges">
-                        <a class="badge-link" href="#"><img src="resource/img/google-play-badge.svg" alt=""></a>
-                        <a class="badge-link" href="#"><img src="resource/img/app-store-badge.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
+        <div class="row">
+            <div class="box">
                 <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Unlimited Features, Unlimited Fun</h2>
-                        <p class="text-muted">Check out what you can do with this app theme!</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="resource/img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Device Mockups</h3>
-                                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-camera text-primary"></i>
-                                    <h3>Flexible Use</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-present text-primary"></i>
-                                    <h3>Free to Use</h3>
-                                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-lock-open text-primary"></i>
-                                    <h3>Open Source</h3>
-                                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
 
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Stop waiting.<br>Start building.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="resource/img/slide-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="resource/img/slide-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="resource/img/slide-3.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name">Business Casual</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>By
+                            <strong>Start Bootstrap</strong>
+                        </small>
+                    </h2>
+                </div>
             </div>
         </div>
-        <div class="overlay"></div>
-    </section>
 
-    <section id="contact" class="contact bg-primary">
-        <div class="container">
-            <h2>We <i class="fa fa-heart"></i> new friends!</h2>
-            <ul class="list-inline list-social">
-                <li class="social-twitter">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li class="social-facebook">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li class="social-google-plus">
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Build a website
+                        <strong>worth visiting</strong>
+                    </h2>
+                    <hr>
+                    <img class="img-responsive img-border img-left" src="resource/img/intro-pic.jpg" alt="">
+                    <hr class="visible-xs">
+                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Beautiful boxes
+                        <strong>to showcase your content</strong>
+                    </h2>
+                    <hr>
+                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
 
     <footer>
         <div class="container">
-            <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li>
-                    <a href="#">Privacy</a>
-                </li>
-                <li>
-                    <a href="#">Terms</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="<c:url value="resource/vendor/jquery/jquery.min.js"/>"></script>
+    <script src="<c:url value="resource/js/jquery.js"/>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<c:url value="resource/vendor/bootstrap/js/bootstrap.min.js"/>"></script>
+    <script src="<c:url value="resource/js/bootstrap.min.js"/>"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"/>"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="<c:url value="resource/js/new-age.min.js"/>"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 
 </body>
 
