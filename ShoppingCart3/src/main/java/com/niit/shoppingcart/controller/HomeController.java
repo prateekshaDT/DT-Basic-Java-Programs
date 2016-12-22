@@ -2,7 +2,10 @@
 package com.niit.shoppingcart.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.niit.shoppingcart.dao.temp.UserDAO;
 
 @Controller
 public class HomeController {
@@ -21,7 +24,7 @@ public class HomeController {
 	{
 		ModelAndView mv=new ModelAndView("home");
 		mv.addObject("msg","you clicked login link");
-		mv.addObject("showLoginpage");
+		mv.addObject("showLoginpage","true");
 		
 		return mv;
 	
@@ -33,10 +36,29 @@ public class HomeController {
 	{
 		ModelAndView mv=new ModelAndView("home");
 	mv.addObject("msg","you clicked registration link");
-	mv.addObject("showRegistrationpage");
+	mv.addObject("showRegistrationpage","true");
 	
 	return mv;
 		
+	}
+	@RequestMapping("/validate")
+	public ModelAndView validate(@RequestParam("id") String id,@RequestParam("password") String pwd, Object password)
+	{
+		System.out.println("In validate method");
+		System.out.println("id" +id);
+		System.out.println("pwd" +pwd);
+		ModelAndView mv=new  ModelAndView("home");
+		
+		UserDAO userDAO=new UserDAO();
+		if(userDAO.isValidCredentials(id,pwd) == true)
+		{
+			mv.addObject("succesMsg", "you logged in succesfully");
+		}
+		else
+		{
+			mv.addObject("errorMsg", "invalidredentials..please try again");
+		}
+		return mv;
 	}
 
 }

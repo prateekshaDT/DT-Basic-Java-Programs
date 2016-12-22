@@ -9,7 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-${msg}
-this is registration page
+please fiil the form..
+<form action="">
+
+Mail ID : <input type="text" name="mailID"><br>
+Password : <input type="password" name="password"><br>
+
+Mobile : <input type="text" name="mobil"> <br> 
+<input type="submit" value="Registration">
+<input type="reset" value="Reset">
+</form>
 </body>
 </html>

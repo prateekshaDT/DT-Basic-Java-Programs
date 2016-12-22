@@ -9,7 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
- ${msg}
-  this is login page
+please login with credentials here....
+
+<form action="validate">
+UserName : <input type="text" name="id"> <br>
+password : <input type="password" name="password"><br>
+<input type="submit" value="login">
+</form>
+
 </body>
 </html>
