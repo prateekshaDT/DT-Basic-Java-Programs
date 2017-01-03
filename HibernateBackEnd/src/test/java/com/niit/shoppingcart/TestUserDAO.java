@@ -26,9 +26,9 @@ public class TestUserDAO {
 		//context -> Bean Factory
 		
 		//ask context to get the instance
-		userDAO =(UserDAO)context.getBean("UserDAOImpl");
+		userDAO =(UserDAO)context.getBean("userDAOImpl");
 		
-		user =(User)context.getBean("user");
+   		user =(User)context.getBean("user");
 		
 	}
 	

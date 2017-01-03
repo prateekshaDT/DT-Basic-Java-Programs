@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.User;
 
-@Repository
+@Repository("userDAOImpl")
 public class UserDAOImpl implements UserDAO{
 	
 	@Autowired
@@ -42,7 +42,7 @@ public class UserDAOImpl implements UserDAO{
     // select * from user where id='niit' and password='niit'
     @Transactional
 	public User validate(String id, String password) {
-	 String hql = "select * from user where id='"+id+ "' and password='"+password+"'";
+	 String hql = "from User where id='"+id+ "' and password='"+password+"'";
 	 
 	 Query query =	sessionFactory.getCurrentSession().createQuery(hql);
 	 
@@ -54,7 +54,7 @@ public class UserDAOImpl implements UserDAO{
 		
 		try {
 			sessionFactory.getCurrentSession().save(user);
-		} catch (Exception e) {
+		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
@@ -68,7 +68,7 @@ public class UserDAOImpl implements UserDAO{
 		
 		try {
 			sessionFactory.getCurrentSession().update(user);
-		} catch (Exception e) {
+		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;

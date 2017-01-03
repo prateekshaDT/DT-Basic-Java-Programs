@@ -1,6 +1,7 @@
 package com.niit.shoppingcart.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -9,6 +10,20 @@ import org.springframework.stereotype.Component;
 @Table
 @Component  //user instance
 public class User {
+	
+	@Id
+	private String id;
+	
+	private String name;
+	
+	private String password;
+	
+	private String mail;
+	
+	private String contact;
+	
+	private String role;
+
 	
 	public String getId() {
 		return id;
@@ -58,16 +73,5 @@ public class User {
 		this.role = role;
 	}
 
-	private String id;
 	
-	private String name;
-	
-	private String password;
-	
-	private String mail;
-	
-	private String contact;
-	
-	private String role;
-
 }
