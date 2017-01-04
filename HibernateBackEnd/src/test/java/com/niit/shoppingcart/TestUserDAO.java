@@ -48,7 +48,7 @@ public class TestUserDAO {
 	
 	public static void main(String[] args) {
 		TestUserDAO t=new TestUserDAO();
-		t.validate("niit", "niit");
+		t.validate("a7", "niit");
 	}
 
 }
