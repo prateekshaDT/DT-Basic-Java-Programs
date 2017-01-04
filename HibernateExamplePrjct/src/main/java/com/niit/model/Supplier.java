@@ -1,6 +1,17 @@
 package com.niit.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
 public class Supplier {
+	
+	@Id
 	private int supplier_id;
 	private String supplier_name;
 	private String supplier_desc;

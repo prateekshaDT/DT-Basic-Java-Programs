@@ -1,0 +1,11 @@
+com\niit\model\Product.class
+com\niit\model\Supplier.class
+com\niit\DAO\ProductDAO.class
+com\niit\DAO\SupplierDAO.class
+com\niit\DAOImpl\CaregoryDAOImpl.class
+com\niit\model\Category.class
+com\niit\configaration\ApplicationContext.class
+com\niit\DAO\CategoryDAO.class
+com\niit\DAOImpl\SupplierDAOImpl.class
+com\niit\HibernateExamplePrjct\App.class
+com\niit\DAOImpl\ProductDAOImpl.class

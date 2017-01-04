@@ -1,6 +1,17 @@
 package com.niit.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
 public class Category {
+	
+	@Id
 	private int category_id;
 	private String category_name;
 	private String category_desc;

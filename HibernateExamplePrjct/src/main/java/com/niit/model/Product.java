@@ -1,6 +1,17 @@
 package com.niit.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
 public class Product {
+	
+	@Id
 	private int product_id;
 	private String product_name;
 	private String product_desc;
