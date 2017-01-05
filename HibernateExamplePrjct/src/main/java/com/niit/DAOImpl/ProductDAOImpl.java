@@ -1,7 +1,9 @@
 package com.niit.DAOImpl;
 
 import java.util.List;
-import org.hibernate.HibernateException;
+
+import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,10 @@ public class ProductDAOImpl implements ProductDAO{
 	public  ProductDAOImpl(SessionFactory sessionFactory )
 	{
 		this.sessionFactory = sessionFactory;
-		System.out.println(sessionFactory);
+		
 	}
-
+	
+    @Transactional
 	public List<Product> list() {
 		
 		String hql="from Product";
@@ -29,17 +32,19 @@ public class ProductDAOImpl implements ProductDAO{
 		
 		 return query.list();
 		}
-
+    
+    @Transactional
 	public Product get(int id) {
 		
 		return(Product) sessionFactory.getCurrentSession().get(Product.class,id);
 	}
 
+    @Transactional
 	public boolean save(Product product) {
 
 		try {
 			sessionFactory.getCurrentSession().save(product);
-		} catch (HibernateException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
@@ -48,11 +53,12 @@ public class ProductDAOImpl implements ProductDAO{
 		return true;
 	}
 
+    @Transactional
 	public boolean update(Product product) {
 		
 		try {
 			sessionFactory.getCurrentSession().update(product);
-		} catch (HibernateException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;

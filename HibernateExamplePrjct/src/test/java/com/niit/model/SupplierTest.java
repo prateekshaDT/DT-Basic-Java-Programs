@@ -14,12 +14,13 @@ public class SupplierTest {
 		   Supplier supplier=(Supplier)con.getBean("supplier");
 		   SupplierDAO supplierdao=(SupplierDAO)con.getBean("supplierDAOImpl");
 		   
-		   supplier.setSupplier_id(01);
-		   supplier.setSupplier_name("abc");
-		   supplier.setSupplier_desc("mn");
+		   supplier.setSupplier_id(07);
+		   supplier.setSupplier_name("prathi");
+		   supplier.setSupplier_desc("mysr");
 		  supplierdao.save(supplier);
 		   supplierdao.update(supplier);
 		   supplierdao.list();
+		   supplierdao.get(1);
 
 	   }
 

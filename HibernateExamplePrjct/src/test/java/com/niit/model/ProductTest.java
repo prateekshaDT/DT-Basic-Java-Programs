@@ -14,9 +14,9 @@ public class ProductTest {
 		   Product product=(Product)con.getBean("product");
 		   ProductDAO productdao=(ProductDAO)con.getBean("productDAOImpl");
 		   
-		   product.setProduct_id(21);
-		   product.setProduct_name("poorna");
-		   product.setProduct_desc("dgk");
+		   product.setProduct_id(22);
+		   product.setProduct_name("po");
+		   product.setProduct_desc("dg");
 		   productdao.save(product);
 		   productdao.update(product);
 		   productdao.list();
