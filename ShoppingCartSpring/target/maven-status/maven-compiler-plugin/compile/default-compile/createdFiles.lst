@@ -1,1 +1,7 @@
+com\niit\model\Product.class
+com\niit\model\Supplier.class
+com\niit\DAO\ProductDAO.class
+com\niit\DAOImpl\SupplierDAOImpl.class
+com\niit\DAO\SupplierDAO.class
+com\niit\DAOImpl\ProductDAOImpl.class
 com\niit\shoppingcart\controller\HomeController.class
