@@ -5,6 +5,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html>
+<%-- <%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core %>--%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -55,11 +57,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="signin-main">
 			<h1>Sign up</h1>
 			<h2>Informations</h2>
-			<form>
-				<input type="text" placeholder="Username">
-				<input type="text" class="no-margin" placeholder="E-mail">
-				<input type="password" placeholder="Password" required=""/>
-				<input type="password" class="no-margin" placeholder="Confirm Password" required=""/>
+			<form:form action="/signup" method="post" CommandName="usersdetail "/>
+				<form:input type="text" placeholder="Enter UserName number" path="UserName"/>
+				<form:input type="text" placeholder="Enter UserFullName number" path="UserFullName"/>
+				<form:input type="text" placeholder="Enter UserId number" path="UserId"/>
+				<form:input type="text" placeholder="Enter UserEmail number" path="UserEmail"/>
+				<form:input type="text" placeholder="Enter UserPhone number" path="UserPhone"/>
+				<form:input type="password" placeholder="Enter Password" path="Password"/>
+				<form:input type="confirmpassword"  placeholder="Enter Confirm Password" path="Confirm Password"/>
 				<span class="checkbox1">
 				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
 			   </span>

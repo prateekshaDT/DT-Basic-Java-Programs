@@ -66,12 +66,9 @@ public class HomeController {
 		System.out.println("inside controller");
 		return "shortcodes";
 	}
-	@RequestMapping("/signup")
-	public String getsignuppage()
-	{
-		System.out.println("inside controller");
-		return "signup";
-	}
+	
+	
+	
 	@RequestMapping("/single")
 	public String getsinglepage()
 	{
