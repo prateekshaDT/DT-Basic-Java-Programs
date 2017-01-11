@@ -45,21 +45,21 @@ public class UserSignupController {
 	public ModelAndView signupUserPost(@Valid @ModelAttribute("usersDetail") UsersDetail usersDetail,
 			BindingResult result) {
 		
-		usersDetail.getUsername();
-		usersDetail.getUserFullName();
-		usersDetail.getUserId();
-		usersDetail.getUserEmail();
-		usersDetail.getUserPhone();
-		usersDetail.getPassword();
+	System.out.println(usersDetail.getUsername());
+	System.out.println(	usersDetail.getUserFullName());
+	System.out.println(	usersDetail.getUserId());
+	System.out.println(	usersDetail.getUserEmail());
+	System.out.println(	usersDetail.getUserPhone());
+	System.out.println(	usersDetail.getPassword());
 		
-	        if (result.hasErrors()) {					
-			ModelAndView model=new ModelAndView("customersignup");
+	      if (result.hasErrors()) {					
+			ModelAndView model=new ModelAndView("signup");
 			model.addObject("message", "You have entered invalid details");
 			
 			System.out.println("Page has errors");
 			return model;
 		}     
-		
+	
 		List<UsersDetail> usersDetailList = usersDetailDAO.getAllUsers();
 
        for (int i=0; i< usersDetailList.size(); i++) {
@@ -79,14 +79,14 @@ public class UserSignupController {
                 return model;
             }
         }
-		if(usersDetailDAO.isValidUser(usersDetail.getUsername())==false){
+		/*if(usersDetailDAO.isValidUser(usersDetail.getUsername())==false){
 			ModelAndView model=new ModelAndView("signup");
 			model.addObject("usernameError", "username already exists");
 			return model;
-		}    
+		}    */
 		/*usersDetail.setEnabled(true);*/
 		usersDetailDAO.addUser(usersDetail);
-		ModelAndView model=new ModelAndView("SignupSuccessfull");
+		ModelAndView model=new ModelAndView("signupsuccess");
 		return model;
 	}
 

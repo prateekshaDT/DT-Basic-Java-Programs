@@ -22,7 +22,7 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 	    private SessionFactory sessionFactory;
 
 	    
-	 
+	   @Transactional
 	    public void addUser(UsersDetail usersDetail) {
 	    	
 	        Session session = sessionFactory.openSession();
@@ -39,17 +39,17 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 	        newUserRole.setUsername(usersDetail.getUsername());
 	        newUserRole.setRole("ROLE_USER");
 	        
-	        session.saveOrUpdate(newUser);
+	        session.save(newUser);
 	        session.saveOrUpdate(newUserRole);
 	       
-	        
-	       usersDetail.getUsername();
-			usersDetail.getUserFullName();
-			usersDetail.getUserId();
-			usersDetail.getUserEmail();
-			usersDetail.getUserPhone();
-			usersDetail.getPassword(); 
-			
+	 
+	        System.out.println(usersDetail.getUsername());
+	    	System.out.println(	usersDetail.getUserFullName());
+	    	System.out.println(	usersDetail.getUserId());
+	    	System.out.println(	usersDetail.getUserEmail());
+	    	System.out.println(	usersDetail.getUserPhone());
+	    	System.out.println(	usersDetail.getPassword());
+	    		
 	        
 	       
 	        session.flush();

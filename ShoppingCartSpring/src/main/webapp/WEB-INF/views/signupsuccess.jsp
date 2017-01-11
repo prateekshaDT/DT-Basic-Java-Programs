@@ -1,14 +1,7 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -50,54 +43,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="resource/js/simpleCart.min.js"> </script>
 <script src="resource/js/bootstrap.min.js"></script>
 </head>
+   
+
 <body>
+
 <!--header strat here-->
 <%@include file="header.jsp" %>
 <!--header end here-->
 
-<!--sign in start here-->
-<div class="signin">
-	<div class="container">
-		<div class="signin-main">
-			<h1>Sign up</h1>
-			<h2>Informations</h2>
-			<div class="error" style="color: #ff0000;">${usernameError}${emailError}${userPhoneError }</div>
-						
-						
-						<c:if test="${not empty message}">
-								<div class="error" style="color: #ff0000;">${message}${usernameError}</div>
-						</c:if>
-						
-					
-			
-			<form:form action="signup" method="post" commandName="usersDetail">
-			
-			    				
-				 <form:errors path="username" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter username " path="username"/>
-				
-					<form:errors path="userFullName" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userFullName " path="userFullName"/>
-				
-				
-				<form:errors path="userEmail" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userEmail" path="userEmail"/>
-				
-				<form:errors path="userPhone" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userPhone number" path="userPhone"/>
-				
-				<form:errors path="password" cssStyle="color: #ff0000" />
-				<form:input type="password" placeholder="Enter password" path="password"/>
-				
-				<span class="checkbox1">
-				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
-			   </span>
-				<input type="submit" value="Submit">
-			</form:form>
-		</div>
-	</div>
-</div>
-<!--sign in end here-->
+Sign Up Successful
+
 <!--footer strat here-->
 <%@include file="footer.jsp" %>
 <!--footer end here-->

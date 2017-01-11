@@ -73,7 +73,7 @@ public class UsersDetail {
         this.password = password;
     }
 
-    public boolean isEnabled() {
+   public boolean isEnabled() {
         return enabled;
     }
 
