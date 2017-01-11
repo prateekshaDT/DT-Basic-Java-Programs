@@ -19,8 +19,8 @@ import com.niit.model.UsersDetail;
 /*
  * This Controller is used to signup user into the system
  */
-@Controller
 
+@Controller
 public class UserSignupController {
 	
 	@Autowired
@@ -45,17 +45,24 @@ public class UserSignupController {
 	public ModelAndView signupUserPost(@Valid @ModelAttribute("usersDetail") UsersDetail usersDetail,
 			BindingResult result) {
 		
-		if (result.hasErrors()) {					
-			ModelAndView model=new ModelAndView("customerSignup");
+		usersDetail.getUsername();
+		usersDetail.getUserFullName();
+		usersDetail.getUserId();
+		usersDetail.getUserEmail();
+		usersDetail.getUserPhone();
+		usersDetail.getPassword();
+		
+	        if (result.hasErrors()) {					
+			ModelAndView model=new ModelAndView("customersignup");
 			model.addObject("message", "You have entered invalid details");
 			
 			System.out.println("Page has errors");
 			return model;
-		}
+		}     
 		
 		List<UsersDetail> usersDetailList = usersDetailDAO.getAllUsers();
 
-        for (int i=0; i< usersDetailList.size(); i++) {
+       for (int i=0; i< usersDetailList.size(); i++) {
         	ModelAndView model=new ModelAndView("signup");
         	if(usersDetail.getUserEmail().equals(usersDetailList.get(i).getUserEmail())) {
                 model.addObject("emailError", "Email already exists");
@@ -64,22 +71,22 @@ public class UserSignupController {
             }
 
             if(usersDetail.getUsername().equals(usersDetailList.get(i).getUsername())) {
-                model.addObject("usernameError", "Username already exists");
+                model.addObject("usernameError", "username already exists");
                 return model;
             }
             if(usersDetail.getUserPhone().equals(usersDetailList.get(i).getUserPhone())) {
-                model.addObject("userPhoneError", "User phone already exists");
+                model.addObject("userPhoneError", "userphone already exists");
                 return model;
             }
         }
 		if(usersDetailDAO.isValidUser(usersDetail.getUsername())==false){
 			ModelAndView model=new ModelAndView("signup");
-			model.addObject("usernameError", "User name already exists");
+			model.addObject("usernameError", "username already exists");
 			return model;
-		}
+		}    
 		/*usersDetail.setEnabled(true);*/
 		usersDetailDAO.addUser(usersDetail);
-		ModelAndView model=new ModelAndView("index");
+		ModelAndView model=new ModelAndView("SignupSuccessfull");
 		return model;
 	}
 

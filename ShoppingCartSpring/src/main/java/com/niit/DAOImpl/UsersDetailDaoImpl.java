@@ -15,8 +15,7 @@ import com.niit.model.UserRole;
 import com.niit.model.Users;
 import com.niit.model.UsersDetail;
 
-@Repository("usersDetailDao")
-@Transactional
+@Repository("usersDetailDAO")
 public class UsersDetailDaoImpl implements  UsersDetailDao{
 	
 	   @Autowired
@@ -43,6 +42,15 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 	        session.saveOrUpdate(newUser);
 	        session.saveOrUpdate(newUserRole);
 	       
+	        
+	       usersDetail.getUsername();
+			usersDetail.getUserFullName();
+			usersDetail.getUserId();
+			usersDetail.getUserEmail();
+			usersDetail.getUserPhone();
+			usersDetail.getPassword(); 
+			
+	        
 	       
 	        session.flush();
 	    }
@@ -66,12 +74,13 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 	    	}
 	    }
 	    
-	    
+	    @Transactional
 	    public UsersDetail getUserById (int userId) {
 	        Session session = sessionFactory.openSession();
 	        return (UsersDetail) session.get(UsersDetail.class, userId);
 	    }
-
+        
+	    @Transactional
 	    public List<UsersDetail> getAllUsers() {
 	        Session session = sessionFactory.openSession();
 	        Query query = session.createQuery("from UsersDetail");
@@ -79,7 +88,8 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 
 	        return usersDetail;
 	    }
-
+	    
+        @Transactional
 	    public UsersDetail getUserByUsername (String username) {
 	        Session session = sessionFactory.openSession();
 	        Query query = session.createQuery("from UsersDetail where username = ?");

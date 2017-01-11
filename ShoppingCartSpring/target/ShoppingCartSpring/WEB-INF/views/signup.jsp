@@ -57,19 +57,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="signin-main">
 			<h1>Sign up</h1>
 			<h2>Informations</h2>
-			<form:form action="/signup" method="post" CommandName="usersdetail "/>
-				<form:input type="text" placeholder="Enter UserName number" path="UserName"/>
-				<form:input type="text" placeholder="Enter UserFullName number" path="UserFullName"/>
-				<form:input type="text" placeholder="Enter UserId number" path="UserId"/>
-				<form:input type="text" placeholder="Enter UserEmail number" path="UserEmail"/>
-				<form:input type="text" placeholder="Enter UserPhone number" path="UserPhone"/>
-				<form:input type="password" placeholder="Enter Password" path="Password"/>
-				<form:input type="confirmpassword"  placeholder="Enter Confirm Password" path="Confirm Password"/>
+			<form:form action="signup" method="post" commandName="usersDetail">
+				<form:input type="text" placeholder="Enter username number" path="username"/>
+				<form:input type="text" placeholder="Enter userFullName number" path="userFullName"/>
+				<form:input type="text" placeholder="Enter userId number" path="userId"/>
+				<form:input type="text" placeholder="Enter userEmail" path="userEmail"/>
+				<form:input type="text" placeholder="Enter userPhone number" path="userPhone"/>
+				<form:input type="password" placeholder="Enter password" path="password"/>
+				
 				<span class="checkbox1">
 				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
 			   </span>
 				<input type="submit" value="Submit">
-			</form>
+			</form:form>
 		</div>
 	</div>
 </div>

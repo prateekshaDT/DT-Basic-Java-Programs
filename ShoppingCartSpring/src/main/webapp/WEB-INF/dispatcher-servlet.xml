@@ -11,7 +11,7 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
  <mvc:annotation-driven />
-<context:component-scan base-package="com.niit.shoppingcart.*" />
+<context:component-scan base-package="com.niit.*" />
  <mvc:default-servlet-handler></mvc:default-servlet-handler>
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 <property name="prefix">
@@ -28,7 +28,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:tcp://localhost/~/new" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/test" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>

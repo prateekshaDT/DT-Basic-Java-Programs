@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="resource/js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
-<li"src/main/webapp/WEB-INF/views/index.jsp"nk href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="src/main/webapp/WEB-INF/views/index.jsp"nk href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<option value="audi">Large</option>
 				</select>
 				</li>
-				<li><a href="#" class="item_add">Add To Cart</a></li>
+				
                </ul>
 			</div>
 			<div class="clearfix"> </div>

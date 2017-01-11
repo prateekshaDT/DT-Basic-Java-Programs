@@ -172,7 +172,7 @@
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 					</div>    
 					<div class="head-signin">
-						<h5><a href="login"><i class="hd-dign"></i>Sign in</a></h5>
+						<h5><a href="signup"><i class="hd-dign"></i>Sign in</a></h5>
 					</div>              
                      <div class="clearfix"> </div>					
 				</div>

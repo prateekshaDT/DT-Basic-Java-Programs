@@ -38,17 +38,6 @@ public class UsersDetail {
 	@NotEmpty (message = "Password can not be empty.")
     private String password;
 	
-	@NotEmpty (message = "Confirm Password can not be empty.")
-    private String confirmpassword;
-
-    public String getConfirm() {
-		return confirmpassword;
-	}
-
-	public void setConfirm(String confirm) {
-		this.confirmpassword = confirm;
-	}
-
 	private boolean enabled;
 	
  
