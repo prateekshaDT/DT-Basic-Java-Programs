@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,8 +29,17 @@
 					 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					        <ul class="nav navbar-nav">
 					        	   <li><a href="index">Home</a></li>
+					        	   <li><a href="contact">Contact</a></li>
+					        	   
+					        	   <li><a href="loginPage">sign in</a></li>
+					        	   
+					        	   
+					        	   
+					        	   <div class="head-signin">
+						<!-- <h5><a href="loginPage"><i class="nav navbar-nav"></i>Sign in</a></h5> -->
+					</div> 
 						             <li class="dropdown">
-						        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
+						        	<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
 						            <ul class="dropdown-menu multi-column columns-3">
 							            <div class="row">
 								            <div class="col-sm-4">
@@ -148,20 +158,19 @@
 							            </div>
 						            </ul>
 						        </li>
-						        <li><a href="contact">Contact</a></li>
-					        </ul>
+ -->						        					        </ul>
 					    </div>
 					    <!--/.navbar-collapse-->
 					</nav>
 					<!--/.navbar-->
 				</div>
 			</div>
-			<div class="header-right">
+			<!-- <div class="header-right">
 				<div class="search">
 					<div class="search-text">
 					    <input class="serch" type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"/>
-					</div>
-					<div class="cart box_1">
+					</div> -->
+					<!-- <div class="cart box_1">
 						<a href="checkout">
 						<h3>
 							<img src="resource/images/cart.png" alt=""/>
@@ -170,10 +179,34 @@
 							</h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-					</div>    
-					<div class="head-signin">
-						<h5><a href="signup"><i class="hd-dign"></i>Sign in</a></h5>
-					</div>              
+					</div>     -->
+					
+					
+					
+                                        <c:choose>
+												<c:when test="${pageContext.request.userPrincipal.name != null}">
+													<c:if test="${pageContext.request.userPrincipal.name == 'Admin'}">
+													
+														<li><a href="<c:url value='/categories'/>">Category</a></li>
+														<li><a href="<c:url value="/suppliers"/>">Supplier</a></li>
+														<li><a href="<c:url value="/products"/>">Product</a></li>
+													</c:if>
+													
+													<c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
+													
+														<li><a href="<c:url value="/user/cart"/>">Cart</a></li>
+													
+													</c:if>
+													</c:when>
+													
+													<c:otherwise>
+													
+														<%-- <li><a href="<c:url value="/register"/>">Register</a></li>
+														<li><a href="<c:url value="/loginPage"/>">Login</a></li>
+													 --%>
+													</c:otherwise>
+											</c:choose>
+					             
                      <div class="clearfix"> </div>					
 				</div>
 			</div>

@@ -84,7 +84,7 @@ public class UserSignupController {
 			model.addObject("usernameError", "username already exists");
 			return model;
 		}    */
-		/*usersDetail.setEnabled(true);*/
+		usersDetail.setEnabled(true);
 		usersDetailDAO.addUser(usersDetail);
 		ModelAndView model=new ModelAndView("signupsuccess");
 		return model;

@@ -3,10 +3,14 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE HTML>
 <html>
-<%-- <%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core %>--%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -57,12 +61,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="signin-main">
 			<h1>Sign up</h1>
 			<h2>Informations</h2>
+			<div class="error" style="color: #ff0000;">${usernameError}${emailError}${userPhoneError }</div>
+						
+						
+						<c:if test="${not empty message}">
+								<div class="error" style="color: #ff0000;">${message}${usernameError}</div>
+						</c:if>
+						
+					
+			
 			<form:form action="signup" method="post" commandName="usersDetail">
-				<form:input type="text" placeholder="Enter username number" path="username"/>
-				<form:input type="text" placeholder="Enter userFullName number" path="userFullName"/>
-				<form:input type="text" placeholder="Enter userId number" path="userId"/>
+			
+			    				
+				 <form:errors path="username" cssStyle="color: #ff0000" />
+				<form:input type="text" placeholder="Enter username " path="username"/>
+				
+					<form:errors path="userFullName" cssStyle="color: #ff0000" />
+				<form:input type="text" placeholder="Enter userFullName " path="userFullName"/>
+				
+				
+				<form:errors path="userEmail" cssStyle="color: #ff0000" />
 				<form:input type="text" placeholder="Enter userEmail" path="userEmail"/>
+				
+				<form:errors path="userPhone" cssStyle="color: #ff0000" />
 				<form:input type="text" placeholder="Enter userPhone number" path="userPhone"/>
+				
+				<form:errors path="password" cssStyle="color: #ff0000" />
 				<form:input type="password" placeholder="Enter password" path="password"/>
 				
 				<span class="checkbox1">

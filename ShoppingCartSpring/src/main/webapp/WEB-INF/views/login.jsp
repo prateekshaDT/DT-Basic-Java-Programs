@@ -3,6 +3,13 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -56,11 +63,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <h1>Login</h1>
 		  <div class="col-md-6 login-left">
 			<h2>Existing User</h2>
-			<form>
-				<input type="text" placeholder="Username" required="">
-				<input type="password" placeholder="Password" required="">
-				<input type="submit" value="Login">
-			</form>
+			
+			 <form name="login"
+							action="<c:url value='/j_spring_security_check' />" method="post">
+
+							<c:if test="${not empty error}">
+								<div class="error" style="color: #ff0000;">${error}</div>
+							</c:if>
+							
+							<div class="span9 center">
+								<c:if test="${not empty msg}">
+									<div class="msg">${msg} </div>
+								</c:if>
+							</div>
+			 
+				<!-- <input type="text" placeholder="Username" required="">
+				<input type="password" placeholder="Password" required=""> -->
+				
+			
+			
+			
+						
+
+							<div class="form-group">
+									<label for="uname">User name</label>
+									
+									<input type="text" id="username" name="username" class="form-control" placeholder="user name"/>
+								</div>
+								<div class="form-group">
+									<label for="password">Password</label> 
+									
+									<input type="password" id="password" name="password" class="form-control" placeholder="password"/>
+								</div>
+								<div>
+								<input class="form-group" type="submit" value="Login">
+								</div>
+								
+								<!-- LOOK HERE -->
+
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+						</form>
+			
 		  </div>
 		  <div class="col-md-6 login-right">
 		  	 <h3>New User? Create an Account</h3>

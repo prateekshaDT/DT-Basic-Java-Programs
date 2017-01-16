@@ -29,12 +29,8 @@ public class HomeController {
 		System.out.println("inside controller");
 		return "contact";
 	}
-	@RequestMapping("/login")
-	public String getloginpage()
-	{
-		System.out.println("inside controller");
-		return "login";
-	}
+	
+	
 
 	@RequestMapping("/pressroom")
 	public String getpressroompage()

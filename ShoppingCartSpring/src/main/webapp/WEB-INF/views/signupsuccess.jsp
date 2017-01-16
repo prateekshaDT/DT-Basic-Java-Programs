@@ -44,14 +44,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="resource/js/bootstrap.min.js"></script>
 </head>
    
-
-<body>
-
-<!--header strat here-->
+   <!--header strat here-->
 <%@include file="header.jsp" %>
 <!--header end here-->
 
-Sign Up Successful
+<body>
+
+
+<div id="all">
+<div id="heading-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<h1>Home</h1>
+					</div>
+					<div class="col-md-5">
+						<ul class="breadcrumb">
+							<li><a href="<c:url value="/"/>">Home</a></li>
+							<li>Sign Up Success</li>
+				</ul>
+</div>
+</div>
+</div></div>
+
+<h3 align="center">You are successfully registered</h3>
+
+		<br>
+		<br>
+<div id="put-center" align="center">
+
+<a href="<c:url value="/"/>"  class="btn btn-template-main" >Continue shopping</a>
+
+</div>
+		<br>
+		<br>
+		<br>
 
 <!--footer strat here-->
 <%@include file="footer.jsp" %>
