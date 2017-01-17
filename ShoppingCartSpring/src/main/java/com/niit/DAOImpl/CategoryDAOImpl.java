@@ -1,73 +1,252 @@
-package com.niit.DAOImpl;
+/*package com.niit.dao;
 
 import java.util.List;
 
-
-import javax.transaction.Transactional;
-
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.DAO.CategoryDAO;
 import com.niit.model.Category;
 
-@Repository("categoryDAOImpl")
+@Repository("categoryDAO")
+@Transactional
 public class CategoryDAOImpl implements CategoryDAO {
-	
+
 	@Autowired
-	private SessionFactory sessionFactory; 
-	
-	public  CategoryDAOImpl(SessionFactory sessionFactory )
-	{
-		this.sessionFactory = sessionFactory; 
-		System.out.println(sessionFactory);
-	}
-	
-    @Transactional
-	public List<Category> list() {
-		
-		
-		String hql="from Category";
-	Query query =	sessionFactory.getCurrentSession().createQuery(hql);
-	
-	 return query.list();
-	}
-    
-    @Transactional
-	public Category get(int id) {
+	private SessionFactory sessionFactory;
 
-		return(Category) sessionFactory.getCurrentSession().get(Category.class,id);
+
+	public CategoryDAOImpl( ) {
+			
+	}
+	
+	public CategoryDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;		
 	}
 
-    @Transactional
-	public boolean save(Category category) {
+	@Transactional
+	public Category get(String id) {
+
+
+		String hql = "from Category where id='" + id + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+
+		@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) query.list();
+
+		if (listCategory != null && !listCategory.isEmpty()) {
+			System.out.println("no product is available with this id :" + id);
+
+			return listCategory.get(0);
+		}
+
+		return null;
+	}
+	
+	@Transactional
+	public Category getByName(String name) {
+		
+		String hql = "from Category where name='" + name + "'";
+
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) query.list();
+
+		if (listCategory != null && !listCategory.isEmpty()) {
+			
+			return listCategory.get(0);
+		}
+
+		return null;
+	}
+	
+	@Transactional
+	public boolean saveOrUpdate(Category category) {
+		
+		if(category!=null){
+			System.out.println("category is not null");
+			System.out.println(category.getName());
+		}
+		else{
+			System.out.println("category is null");
+		}
 		
 		try {
-			sessionFactory.getCurrentSession().save(category);
+			
+			System.out.println("Inside saveOrUpdate method ");
+			//sessionFactory.getCurrentSession().saveOrUpdate(category);
+			System.out.println("Inside saveOrUpdate method ;lllllll");
+			sessionFactory.openSession().saveOrUpdate(category);
+			//sessionFactory.getCurrentSession().flush();
+		
+			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();;
+			System.out.println("Inside saveOrUpdate catch ");
+			
+			e.printStackTrace();
 			return false;
 		}
-	
-		return true;
 	}
 
-    @Transactional
-	public boolean update(Category category) {
-		
+
+	@Transactional
+	public boolean delete(String id) {
 		try {
-			sessionFactory.getCurrentSession().update(category);
-		} catch (Exception e) {
+			Category categoryToDelete = new Category();
+			categoryToDelete.setId(id);
+		
+			sessionFactory.getCurrentSession().delete(categoryToDelete);
+			sessionFactory.getCurrentSession().flush();
+			return true;
+		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
-
-		
-		return true;
 	}
 
+	
+
+	
+	
+	
+	@Transactional
+	public List<Category> list() {
+
+		String hql = "from Category ORDER BY ID ASC";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Category> list = query.list();
+		if (list == null || list.isEmpty()) {
+			System.out.println("No products are available");
+		}
+		return list;
+	}
+}
+*/
+
+package com.niit.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+//import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.DAO.CategoryDAO;
+import com.niit.model.Category;
+
+@Repository("categoryDAO")
+@Transactional
+public class CategoryDAOImpl implements CategoryDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	
+	public CategoryDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;	
+		System.out.println("inside session constructor");
+		//sessionFactory = new Configuration().configure().buildSessionFactory();
+		
+	}
+
+	@Transactional
+	public Category get(String id) {
+
+	
+		String hql = "from Category where id='" + id + "'";
+		Session session = sessionFactory.openSession();		
+		Query query = session.createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) query.list();
+		if (listCategory != null && !listCategory.isEmpty()) {			
+			return listCategory.get(0);
+		}
+		return null;
+	}
+
+	@Transactional
+	public Category getByName(String name) {
+
+		String hql = "from Category where name='" + name + "'";
+		
+		
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) query.list();
+
+		if (listCategory != null && !listCategory.isEmpty()) {
+		
+			return listCategory.get(0);
+		}
+
+		return null;
+	}
+	
+	@Transactional
+	public boolean saveOrUpdate(Category category) {
+		
+		try {
+			System.out.println("inside save or update");
+			Session session = sessionFactory.openSession();
+			session.saveOrUpdate(category); 
+			session.flush();
+					
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+		
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
+	@Transactional
+	public boolean delete(String id) {
+		try {
+			Category categoryToDelete = new Category();
+			categoryToDelete.setId(id);
+			Session session = sessionFactory.openSession();
+			session.delete(categoryToDelete);
+			session.flush();
+			
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+		
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	
+	@Transactional
+	public List<Category> list() {
+
+		
+		String hql = "from Category ORDER BY ID ASC";
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery(hql);
+		List<Category> list = query.list();
+		if (list == null || list.isEmpty()) {
+		System.out.println("list is empty");
+		}
+		
+		return list;
+	}
 }

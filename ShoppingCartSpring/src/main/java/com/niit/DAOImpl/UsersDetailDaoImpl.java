@@ -37,7 +37,7 @@ public class UsersDetailDaoImpl implements  UsersDetailDao{
 
 	        UserRole newUserRole = new UserRole();
 	        newUserRole.setUsername(usersDetail.getUsername());
-	        newUserRole.setRole("ROLE_USER");
+	        newUserRole.setRole("ROLE_ADMIN");
 	        
 	        session.save(newUser);
 	        session.saveOrUpdate(newUserRole);

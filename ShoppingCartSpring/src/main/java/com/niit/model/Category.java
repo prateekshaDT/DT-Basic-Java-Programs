@@ -1,37 +1,58 @@
 package com.niit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import java.io.Serializable;
+//import java.util.Set;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+//import javax.persistence.FetchType;
+import javax.persistence.Id;
+//import javax.persistence.OneToMany;
 
 @Entity
-@Table
-@Component
 public class Category {
-	
 	@Id
-	private int category_id;
-	private String category_name;
-	private String category_desc;
-	public int getCategory_id() {
-		return category_id;
+	private String id;
+	
+	@Column(unique = true, nullable=false)
+	private String name;
+	private String description;
+
+	/*@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	private Set<Product> products;
+	
+	
+	public Set<Product> getProducts() {
+		return products;
 	}
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}*/
+
+	@Column(name = "ID")
+	public String getId() {
+		return id;
 	}
-	public String getCategory_name() {
-		return category_name;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public void setCategory_name(String category_name) {
-		this.category_name = category_name;
+
+	public String getName() {
+		return name;
 	}
-	public String getCategory_desc() {
-		return category_desc;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setCategory_desc(String category_desc) {
-		this.category_desc = category_desc;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
