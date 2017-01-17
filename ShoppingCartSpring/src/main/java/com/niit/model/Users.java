@@ -9,7 +9,7 @@ public class Users {
 	
 	@Id
     @GeneratedValue
-   /* private int usersId;*/
+   // private int usersId;
     private String username;
     private String password;
     private boolean enabled;
@@ -27,8 +27,8 @@ public class Users {
 
     public void setUsersId(int usersId) {
         this.usersId = usersId;
-    }*/
-
+    }
+*/
     public String getUsername() {
         return username;
     }
