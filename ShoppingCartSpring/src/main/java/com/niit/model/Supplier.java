@@ -1,38 +1,56 @@
 package com.niit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import java.io.Serializable;
+//import java.util.Set;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+//import javax.persistence.FetchType;
+import javax.persistence.Id;
+//import javax.persistence.OneToMany;
 
 @Entity
-@Table
-@Component
 public class Supplier {
-	
 	@Id
-	private int supplier_id;
-	private String supplier_name;
-	private String supplier_desc;
-	public int getSupplier_id() {
-		return supplier_id;
+	private String id;
+	@Column(unique = true, nullable=false)
+	private String name;
+	private String address;
+	
+	/*@OneToMany(mappedBy="supplier", fetch=FetchType.EAGER)
+	private Set<Product> products;
+	
+	
+	public Set<Product> getProducts() {
+		return products;
 	}
-	public void setSupplier_id(int supplier_id) {
-		this.supplier_id = supplier_id;
-	}
-	public String getSupplier_name() {
-		return supplier_name;
-	}
-	public void setSupplier_name(String supplier_name) {
-		this.supplier_name = supplier_name;
-	}
-	public String getSupplier_desc() {
-		return supplier_desc;
-	}
-	public void setSupplier_desc(String supplier_desc) {
-		this.supplier_desc = supplier_desc;
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}*/
+	
+	
+	@Column(name = "ID")
+	public String getId() {
+		return id;
 	}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 }

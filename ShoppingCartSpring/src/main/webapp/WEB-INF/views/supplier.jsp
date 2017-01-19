@@ -4,23 +4,9 @@
 <%@ page session="false"%>
 
 <style type="text/css">
-.form-group input {
-	width: 50%;
-}
 
-.select-style select {
-	width: 50%;
-	padding: 16px 20px;
-	border: none;
-	border-radius: 4px;
-	background-color: #f1f1f1;
-}
-
-#itemimage {
-	width: 50%;
-	padding: 16px 20px;
-	border: none;
-	border-radius: 4px;
+.form-group input{
+	width:50%;
 }
 </style>
 
@@ -71,31 +57,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--header end here-->
 
 
-<div id="content">
-	<div class="container">
+	<div id="content">
+		<div class="container">
 
 
-		<div class="flex-container">
 
+			<h2 class="text-uppercase">Supplier</h2>
 
-			<h2 class="text-uppercase">Product</h2>
 
 			<hr>
 
 			<!-- LOOK HERE -->
 
+			<h3>Add a Supplier</h3>
 
-			<h3>Add a Product</h3>
-
-
-			<c:url var="addAction" value="/product/add"></c:url>
-			<form:form action="${addAction}" commandName="product"
-				enctype="multipart/form-data">
+			<c:url var="addAction" value="/supplier/add"></c:url>
+			<form:form action="${addAction}" commandName="supplier">
 
 
 				<div class="form-group">
 					<c:choose>
-						<c:when test="${!empty product.id}">
+						<c:when test="${!empty supplier.id}">
 
 							<div class="form-group">
 								<label for="name">ID</label>
@@ -134,61 +116,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 
 				<div class="form-group">
-					<label for="price"> <spring:message text="Price" />
-					</label>
+					<label for="address">Address</label>
 					<div class="controls docs-input-sizes">
-						<form:input path="price" required="true" class="form-control"
-							id="price" />
+						<form:input placeholder="address" path="address"
+							class="form-control" id="address" />
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label for="description">Description</label>
-					<div class="controls docs-input-sizes">
-						<form:input placeholder="description" path="description"
-							class="form-control" id="description" />
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<label for="supplier">Supplier</label>
-					<div class="select-style">
-						<form:select path="supplier.name" items="${supplierList}"
-							itemValue="name" itemLabel="name" />
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<label for="category">Category</label>
-					<div class="select-style">
-						<form:select path="category.name" items="${categoryList}"
-							itemValue="name" itemLabel="name" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="description">Upload image</label>
-					<div class="controls docs-input-sizes">
-						<form:input id="itemimage" path="itemImage" type="file"
-							class="form:input-large" />
-					</div>
-				</div>
 
 
 				<div class="form-group">
 					<div class="controls docs-input-sizes">
-						<c:if test="${!empty product.name}">
+						<c:if test="${!empty supplier.name}">
 
 							<button type="submit" class="btn btn-template-main pull-left">
-								<i class="fa fa-user-md"></i> Edit Product
+								<i class="fa fa-user-md"></i> Edit Supplier
 							</button>
 						</c:if>
-						<c:if test="${empty product.name}">
+						<c:if test="${empty supplier.name}">
 
 							<button type="submit" class="btn btn-template-main pull-left">
-								<i class="fa fa-user-md"></i> Add Product
+								<i class="fa fa-user-md"></i> Add Supplier
 							</button>
 						</c:if>
 					</div>
@@ -196,58 +144,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form:form>
 
 
-			<br>
-			<br>
+			<br><br><br>
 
+			<c:if test="${!empty supplierList}">
 
-
-			<div class="all">
-				<c:if test="${!empty productList}">
-					<h3>Product List</h3>
+				<div class="row">
+					<h3>Supplier List</h3>
 					<table class="tg">
 						<tr>
-							<th width="80">Product ID</th>
-							<th width="120">Product Name</th>
-							<th width="200">Product Description</th>
-							<th width="80">Price in Rs.</th>
-							<th width="80">Product Category</th>
-							<th width="80">Product Supplier</th>
+							<th width="80">Supplier ID</th>
+							<th width="120">Supplier Name</th>
+							<th width="120">Supplier Address</th>
 							<th width="60">Edit</th>
 							<th width="60">Delete</th>
-							<th width="60">Product Image</th>
 						</tr>
-						<c:forEach items="${productList}" var="product">
+						<c:forEach items="${supplierList}" var="supplier">
 							<tr>
-								<td>${product.id}</td>
-								<td>${product.name}</td>
-								<td>${product.description}</td>
-								<td align=right>Rs.${product.price}</td>
-								<td>${product.category.name}</td>
-								<td>${product.supplier.name}</td>
-								<td><a href="<c:url value='product/edit/${product.id}' />">Edit</a></td>
+								<td>${supplier.id}</td>
+								<td>${supplier.name}</td>
+								<td>${supplier.address}</td>
 								<td><a
-									href="<c:url value='product/remove/${product.id}' />">Delete</a></td>
-								<td><img
-									src="<c:url value="/resources/img/productImages/${product.id}.jpg"/>"
-									height="142" width="142" alt="product image" /></td>
+									href="<c:url value='supplier/edit/${supplier.id}' />">Edit</a></td>
 								<td><a
-									href="<c:url value="/resources/img/productImages/${product.id}.jpg"/>">Click
-										here</a></td>
+									href="<c:url value='supplier/remove/${supplier.id}' />">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>
-				</c:if>
-			</div>
+				</div>
+			</c:if>
+		<br> <br> <br>
+
 
 		</div>
-
-		<br>
-		<br>
-		<br>
-
 	</div>
 
-</div>
 
 <!--footer strat here-->
 <%@include file="footer.jsp" %>

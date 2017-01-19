@@ -1,4 +1,4 @@
-package com.niit.model;
+/*package com.niit.model;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -25,3 +25,4 @@ public class SupplierTest {
 	   }
 
 }
+*/
