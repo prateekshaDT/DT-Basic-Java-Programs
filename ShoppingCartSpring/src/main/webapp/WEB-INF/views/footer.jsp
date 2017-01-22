@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+   
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,11 +12,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<footer>
+<ul></ul>
 <div class="footer">
 	<div class="container">
 		<div class="footer-main">
 			<div class="ftr-grids-block">
-				<div class="col-md-3 footer-grid">
+				<div class="col-md-1 footer-grid">
 					<ul>
 						<li><a href="product">Accessories</a></li>
 						<li><a href="product">Hand bags</a></li>
@@ -21,7 +27,7 @@
 						<li><a href="product">Watches</a></li>
 					</ul>
 				</div>
-				<div class="col-md-3 footer-grid">
+				<div class="col-md-2 footer-grid">
 					<ul>
 						<li><a href="login">Your Account</a></li>
 						<li><a href="contact">Contact Us</a></li>
@@ -64,5 +70,6 @@
 		</div>
 	</div>
 </div>
+</footer>
 </body>
 </html>

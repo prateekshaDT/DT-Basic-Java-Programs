@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 banner-left">
 				<a href="single"><img src="resource/images/ba.png" alt="" class="img-responsive"></a>
 			</div>
-			<div class="col-md-6 banner-right simpleCart_shelfItem">
+			<!-- <div class="col-md-6 banner-right simpleCart_shelfItem">
 				<span class="bann-heart"> </span>
 				<h2>Handbags</h2>
 				<h1>Sed perspiciatis unde</h1>
@@ -81,8 +81,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 </div>
-<!--banner end here-->
-<!--block-layer2 start here-->
+banner end here
+block-layer2 start here
 <div class="blc-layer2">
 	<div class="container">
 		<div class="blc-layer2-main">
@@ -97,8 +97,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 </div>
-<!--block-layer2 end here-->
-<!--block-layer1 start here-->
+block-layer2 end here
+block-layer1 start here
 <div class="blc-layer3">
 	<div class="container">
 		<div class="blc-layer3-main">
@@ -149,8 +149,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 </div>
-<!--block-layer1 end here-->
-<!--home-block start here-->
+block-layer1 end here
+home-block start here
 <div class="home-block">
 	<div class="container">
 		<div class="home-block-main">
@@ -212,11 +212,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-	</div>
+	</div> -->
 </div>	
 <!--home block end here-->
 <!--footer strat here-->
-<%@include file="footer.jsp" %>
+<ul></ul>
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="ftr-grids-block">
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="product.html">Accessories</a></li>
+						<li><a href="product.html">Hand bags</a></li>
+						<li><a href="product.html">Clothing</a></li>
+						<li><a href="product.html">Brands</a></li>
+						<li><a href="product.html">Watches</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="login.html">Your Account</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="product.html">Store Locator</a></li>
+						<li><a href="pressroom.html">Press Room</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="terms.html">Website Terms</a></li>
+						<li><select class="country">
+										<option value="select your location">Select Country</option>
+										<option value="saab">Australia</option>
+										<option value="fiat">Singapore</option>
+										<option value="audi">London</option>
+									</select>
+							
+						</li>
+						<li><a href="shortcodes.html">Short Codes</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid-icon">
+					<ul>
+						<li><a href="#"><span class="u-tub"> </span></a></li>
+						<li><a href="#"><span class="instro"> </span></a></li>
+						<li><a href="#"><span class="twitter"> </span></a></li>
+						<li><a href="#"><span class="fb"> </span></a></li>
+						<li><a href="#"><span class="print"> </span></a></li>
+					</ul>
+					<form>
+					<input class="email-ftr" type="text" value="Newsletter" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Newsletter';}">
+					<input type="submit" value="Submit"> 
+					</form>
+				</div>
+		    <div class="clearfix"> </div>
+		  </div>
+		  <div class="copy-rights">
+		     <p>© 2016 Shoplist. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		   </div>
+		</div>
+	</div>
+</div>
+</div>
 <!--footer end here-->
 </body>
 </html>

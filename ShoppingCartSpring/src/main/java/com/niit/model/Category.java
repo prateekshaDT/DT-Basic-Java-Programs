@@ -1,13 +1,13 @@
 package com.niit.model;
 
-//import java.io.Serializable;
-//import java.util.Set;
+import java.util.Set;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -18,7 +18,7 @@ public class Category {
 	private String name;
 	private String description;
 
-	/*@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
 	private Set<Product> products;
 	
 	
@@ -28,7 +28,7 @@ public class Category {
 
 	public void setProducts(Set<Product> products) {
 		this.products = products;
-	}*/
+	}
 
 	@Column(name = "ID")
 	public String getId() {

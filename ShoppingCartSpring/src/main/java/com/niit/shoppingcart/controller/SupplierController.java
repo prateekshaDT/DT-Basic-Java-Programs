@@ -51,7 +51,7 @@ public class SupplierController {
 		System.out.println("Hello.. I'm inside /supplier remove");
 		try {
 			supplierDAO.delete(id);
-			//model.addAttribute("message", "Successfully Added");
+			model.addAttribute("message", "Successfully Added");
 		} catch (Exception e) {
 			model.addAttribute("message", e.getMessage());
 			e.printStackTrace();

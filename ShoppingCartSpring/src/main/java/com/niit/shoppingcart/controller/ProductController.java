@@ -99,7 +99,7 @@ public class ProductController {
 		
 		
 		MultipartFile itemImage = product.getItemImage();
-		path = Paths.get("E:\\Prject\\ShoppingCartSpring\\src\\main\\webapp\\WEB-INF\\resources\\img\\productImages\\" + product.getId() + ".jpg");
+		path = Paths.get("E:\\Users\\prathi\\workspace\\ShoppingCartSpring\\src\\main\\webapp\\WEB-INF\\resources\\img\\productImages\\" + product.getId() + ".jpg");
 		
 		
 		
@@ -130,7 +130,7 @@ public class ProductController {
 		}
 		
 		
-		path = Paths.get("E:\\Prject\\ShoppingCartSpring\\src\\main\\webapp\\WEB-INF\\resources\\img\\productImages\\" + id + ".jpg");
+		path = Paths.get("E:\\Users\\prathi\\workspace\\ShoppingCartSpring\\src\\main\\webapp\\WEB-INF\\resources\\img\\productImages\\" + id + ".jpg");
 		
 		if (Files.exists(path)) {
             try {
@@ -154,7 +154,7 @@ public class ProductController {
 		model.addAttribute("supplierList", this.supplierDAO.list());
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		model.addAttribute("product", this.productDAO.get(id));
-		//model.addAttribute("productList", this.productDAO.list());
+		model.addAttribute("productList", this.productDAO.list());
 		return "product";
 	}
 	

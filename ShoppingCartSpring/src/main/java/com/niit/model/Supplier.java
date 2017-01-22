@@ -1,5 +1,7 @@
 package com.niit.model;
 
+
+
 //import java.io.Serializable;
 //import java.util.Set;
 
@@ -27,8 +29,8 @@ public class Supplier {
 
 	public void setProducts(Set<Product> products) {
 		this.products = products;
-	}*/
-	
+	}
+*/	
 	
 	@Column(name = "ID")
 	public String getId() {

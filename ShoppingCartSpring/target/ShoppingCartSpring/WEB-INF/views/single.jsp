@@ -72,13 +72,13 @@ $(window).load(function() {
 	   		<div class="col-md-5 single-top">	
 			   <div class="flexslider">
 				  <ul class="slides">
-				    <li data-thumb="images/si1.jpg">
+				    <li data-thumb="resource/images/si1.jpg">
 				        <div class="thumb-image"> <img src="resource/images/s1.jpg" data-imagezoom="true" class="img-responsive"> </div>
 				    </li>
-				    <li data-thumb="images/si2.jpg">
+				    <li data-thumb="resource/images/si2.jpg">
 				         <div class="thumb-image"> <img src="resource/images/s2.jpg" data-imagezoom="true" class="img-responsive"> </div>
 				    </li>
-				    <li data-thumb="images/si3.jpg">
+				    <li data-thumb="resource/images/si3.jpg">
 				       <div class="thumb-image"> <img src="resource/images/s3.jpg" data-imagezoom="true" class="img-responsive"> </div>
 				    </li> 
 				  </ul>

@@ -4,8 +4,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Shopping Cart</title>
 </head>
 <body>
 <div class="header">
@@ -25,18 +28,92 @@
 								<a href="index"><img src="resource/images/logo1.png" alt=""></a>
 							</div>
 					    </div>
+					    
+					  <!--   
+					    <div class="search-box">
+					<div id="sb-search" class="sb-search">
+						<form action="#" method="post">
+							<input class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+						</form>
+					</div>
+				</div> -->
+				
+				 <c:choose>
+						<c:when test="${pageContext.request.userPrincipal.name != null}">
+
+							<li>
+							<li><h4>
+									<a>hello, ${pageContext.request.userPrincipal.name}</a>
+								</h4></li>
+							<li>
+						</c:when>
+					</c:choose>
+					    
 					    <!--/.navbar-header-->
 					 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					        <ul class="nav navbar-nav">
-					        	   <li><a href="index">Home</a></li>
+					 
+									 
+					        
+					        	    <li><a href="index">Home</a></li> 
 					        	   <li><a href="contact">Contact</a></li>
 					        	   
-					        	   <li><a href="loginPage">sign in</a></li>
+					        	   <li><a href="loginPage">Login</a></li>
 					        	   
+					        
+					        	
+					        	<%-- <c:choose>
+						<c:when test="${pageContext.request.userPrincipal.name != null}">
+
+							<li>
+							<li><h4>
+									<a>hello, ${pageContext.request.userPrincipal.name}</a>
+								</h4></li>
+							<li>
+						</c:when>
+					</c:choose>
+					 --%>
+					<c:choose>
+					<c:when test="${pageContext.request.userPrincipal.name != null}">
+						<li class="grid"><a class="color2"
+							href="<c:url value="/j_spring_security_logout"/>">Sign Out</a>
+					</c:when>
+			 
+				</c:choose>
+					        	
+					        	
+                                        <c:choose>
+												<c:when test="${pageContext.request.userPrincipal.name != null}">
+													<c:if test="${pageContext.request.userPrincipal.name == 'Admin'}">
+													
+														<li><a href="<c:url value='/categories'/>">Category</a></li>
+														<li><a href="<c:url value="/suppliers"/>">Supplier</a></li>
+														<li><a href="<c:url value="/products"/>">Product</a></li>
+													</c:if>
+													
+													<c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
+													
+														<li><a href="<c:url value="/user/cart"/>">Cart</a></li>
+													    
+													    <li class="grid"><a class="color2" href="<c:url value="/j_spring_security_logout"/>">SIGN OUT</a>
+												
+													    
+													</c:if>
+													</c:when>
+													
+													<%-- <c:otherwise>
+													
+														<li><a href="<c:url value="/register"/>">Register</a></li>
+														<li><a href="<c:url value="/loginPage"/>">Login</a></li>
+													
+													</c:otherwise> --%>
+											</c:choose>
 					        	   
 					        	   
 					        	   <div class="head-signin">
-						<!-- <h5><a href="loginPage"><i class="nav navbar-nav"></i>Sign in</a></h5> -->
+						<!-- <h5><a href="loginPage"><i class="nav navbar-nav"></i>Login</a></h5> -->
 					</div> 
 						             <li class="dropdown">
 						        	<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
@@ -183,7 +260,7 @@
 					
 					
 					
-                                        <c:choose>
+                                     <%--    <c:choose>
 												<c:when test="${pageContext.request.userPrincipal.name != null}">
 													<c:if test="${pageContext.request.userPrincipal.name == 'Admin'}">
 													
@@ -201,11 +278,11 @@
 													
 													<c:otherwise>
 													
-														<%-- <li><a href="<c:url value="/register"/>">Register</a></li>
+														<li><a href="<c:url value="/register"/>">Register</a></li>
 														<li><a href="<c:url value="/loginPage"/>">Login</a></li>
-													 --%>
+													
 													</c:otherwise>
-											</c:choose>
+											</c:choose> --%>
 					             
                      <div class="clearfix"> </div>					
 				</div>

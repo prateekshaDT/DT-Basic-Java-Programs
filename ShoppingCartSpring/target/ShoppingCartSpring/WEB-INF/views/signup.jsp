@@ -73,26 +73,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<form:form action="signup" method="post" commandName="usersDetail">
 			
 			    				
-				 <form:errors path="username" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter username " path="username"/>
-				
-					<form:errors path="userFullName" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userFullName " path="userFullName"/>
-				
-				
-				<form:errors path="userEmail" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userEmail" path="userEmail"/>
-				
-				<form:errors path="userPhone" cssStyle="color: #ff0000" />
-				<form:input type="text" placeholder="Enter userPhone number" path="userPhone"/>
-				
-				<form:errors path="password" cssStyle="color: #ff0000" />
-				<form:input type="password" placeholder="Enter password" path="password"/>
-				
-				<span class="checkbox1">
-				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
-			   </span>
-				<input type="submit" value="Submit">
+				<div class="form-group">
+								<label for="fullname-signup">Full Name</label>
+								
+								<form:errors path="userFullName" cssStyle="color: #ff0000" />
+								<div class="controls docs-input-sizes">
+									<form:input type="text" placeholder="user full name" path="userFullName" class="form-control" id="userFullName" />
+								</div> </div>
+
+
+
+								<div class="form-group">
+								<label for="name-signup">Name</label>
+								
+								<form:errors path="username" cssStyle="color: #ff0000" /> 
+								<div class="controls docs-input-sizes">
+									<form:input type="text" placeholder="user name" path="username" class="form-control" id="username" />
+								</div> </div>
+
+
+								<div class="form-group">
+									<label for="name-signup">Phone</label>
+									
+									<div class="controls docs-input-sizes">
+										<form:input type="text" placeholder="phone" path="userPhone" 
+										class="form-control" id="phone-signup" max="10" />
+									</div>
+								</div>
+
+
+								
+								<div class="form-group">
+									<label for="email-signup">Email</label>
+									
+									<form:errors path="userEmail" cssStyle="color: #ff0000" />
+									<div class="controls docs-input-sizes">
+										<form:input placeholder="email" path="userEmail" 
+										class="form-control" id="email-signup" />
+									</div>
+								</div>
+
+								
+
+
+								<div class="form-group">
+									<label for="password-signup">Password</label>
+									
+									<form:errors path="password" cssStyle="color: #ff0000" />
+									<div class="controls docs-input-sizes">
+										<form:input type="password" path="password" class="form-control"
+											placeholder="password" id="password-signup" min="7" max="15" />
+									</div>
+								</div>
+
+
+								<div class="form-group">
+								<div class="text-center">
+									<button type="submit" class="btn btn-template-main pull-left">
+										<i class="fa fa-user-md"></i> Register
+									</button>
+								</div></div>
+								
+								<div class="form-group">
+								<div class="text-center">
+									<button type="reset" class="btn btn-template-main"
+										value="Reset">Clear</button>
+								</div></div>
+							
+
 			</form:form>
 		</div>
 	</div>
