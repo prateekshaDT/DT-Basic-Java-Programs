@@ -216,7 +216,7 @@ home-block start here
 </div>	
 <!--home block end here-->
 <!--footer strat here-->
-<ul></ul>
+
 <div class="footer">
 	<div class="container">
 		<div class="footer-main">
