@@ -118,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</c:when>
 			 
 				</c:choose>
-					        	
+					        	<ul></ul>
 					        	
                                         <c:choose>
 												<c:when test="${pageContext.request.userPrincipal.name != null}">
