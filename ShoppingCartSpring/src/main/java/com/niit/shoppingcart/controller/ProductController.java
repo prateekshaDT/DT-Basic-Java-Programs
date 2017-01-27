@@ -184,7 +184,7 @@ public class ProductController {
 		// redirectAttributes.addFlashAttribute("selectedProduct", this.productDAO.get(id));
 		model.addAttribute("selectedProduct", this.productDAO.get(id));
 		 //model.addAttribute("categoryList", this.categoryDAO.list());
-		 return "productInfo";
+		 return "productInfo1";
 	}
 	
 }
