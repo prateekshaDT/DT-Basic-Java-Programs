@@ -133,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													
 														<li><a href="<c:url value="/user/cart"/>">Cart</a></li>
 													    
-													    <li class="grid"><a class="color2" href="<c:url value="/j_spring_security_logout"/>">SIGN OUT</a>
+													   <%--  <li class="grid"><a class="color2" href="<c:url value="/j_spring_security_logout"/>">SIGN OUT</a> --%>
 												
 													    
 													</c:if>

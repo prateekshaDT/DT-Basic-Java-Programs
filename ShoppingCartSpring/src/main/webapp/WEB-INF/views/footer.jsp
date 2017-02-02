@@ -8,6 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Shopping cart</title>
 
@@ -47,44 +48,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //end-smoth-scrolling -->
 <script src="resource/js/simpleCart.min.js"> </script>
 <script src="resource/js/bootstrap.min.js"></script>
-
+<style>
+p{text-align:"center"}
+</style>
 </head>
 <body>
 <footer>
-<ul></ul>
 <div class="footer">
 	<div class="container">
 		<div class="footer-main">
 			<div class="ftr-grids-block">
-				<div class="col-md-1 footer-grid">
+				<div class="col-md-3 footer-grid">
 					<ul>
-						<li><a href="product">Accessories</a></li>
-						<li><a href="product">Hand bags</a></li>
-						<li><a href="product">Clothing</a></li>
-						<li><a href="product">Brands</a></li>
-						<li><a href="product">Watches</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 footer-grid">
-					<ul>
-						<li><a href="login">Your Account</a></li>
-						<li><a href="contact">Contact Us</a></li>
-						<li><a href="product">Store Locator</a></li>
-						<li><a href="pressroom">Press Room</a></li>
+						<li><a href="product.html">Accessories</a></li>
+						<li><a href="product.html">Hand bags</a></li>
+						<li><a href="product.html">Clothing</a></li>
+						<li><a href="product.html">Brands</a></li>
+						<li><a href="product.html">Watches</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-grid">
 					<ul>
-						<li><a href="terms">Website Terms</a></li>
+						<li><a href="login.html">Your Account</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="product.html">Store Locator</a></li>
+						<li><a href="pressroom.html">Press Room</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="terms.html">Website Terms</a></li>
 						<li><select class="country">
 										<option value="select your location">Select Country</option>
-										<option value="saab">india</option>
+										<option value="saab">Australia</option>
 										<option value="fiat">Singapore</option>
 										<option value="audi">London</option>
 									</select>
 							
 						</li>
-						<li><a href="shortcodes">Short Codes</a></li>
+						<li><a href="shortcodes.html">Short Codes</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-grid-icon">
@@ -103,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    <div class="clearfix"> </div>
 		  </div>
 		  <div class="copy-rights">
-		     <p>© 2017 Shoplist. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		     <p>© 2016 Shoplist. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 		   </div>
 		</div>
 	</div>

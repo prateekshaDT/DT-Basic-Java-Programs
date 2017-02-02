@@ -6,6 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -14,12 +15,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<title>Shoplist A Ecommerce Category Flat Bootstrap Responsive  Website Template | Home :: w3layouts</title>
+<title>Shoplist A Ecommerce Category Flat Bootstrap Responsive  Website Template | Login :: w3layouts</title>
 <link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="resource/js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
-<link href="src/main/webapp/WEB-INF/views/index.jsp"link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -43,6 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //end-smoth-scrolling -->
 <script src="resource/js/simpleCart.min.js"> </script>
 <script src="resource/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <!--header strat here-->
@@ -216,7 +218,6 @@ home-block start here
 </div>	
 <!--home block end here-->
 <!--footer strat here-->
-
 <div class="footer">
 	<div class="container">
 		<div class="footer-main">
@@ -272,7 +273,6 @@ home-block start here
 		   </div>
 		</div>
 	</div>
-</div>
 </div>
 <!--footer end here-->
 </body>

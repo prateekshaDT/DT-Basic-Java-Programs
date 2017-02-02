@@ -99,7 +99,7 @@ $(window).load(function() {
 						<option value="audi">Large</option>
 					</select>
 					</li>
-					<li><a href="#" class="item_add">Add To Cart</a></li>					
+					<li><a href="myCart" class="item_add">Add To Cart</a></li>					
 	            </ul>
 			</div>
 		   <div class="clearfix"> </div>
@@ -111,7 +111,7 @@ $(window).load(function() {
 					      <a href="#"><img src="resource/images/h14.jpg" alt="" class="img-responsive zoom-img"></a>
 					   </div>
 						<div class="home-product-bottom">
-								<h3><a href="#">Smart Shopping</a></h3>
+								<h3><a href="myCart">Smart Shopping</a></h3>
 								<p>Explore Now</p>						
 						</div>
 						<div class="srch">
@@ -125,7 +125,7 @@ $(window).load(function() {
 					      <a href="#"><img src="resource/images/h15.jpg" alt="" class="img-responsive zoom-img"></a>
 					   </div>
 						<div class="home-product-bottom">
-								<h3><a href="#">Smart Shopping</a></h3>
+								<h3><a href="myCart">Smart Shopping</a></h3>
 								<p>Explore Now</p>						
 						</div>
 						<div class="srch">
@@ -139,7 +139,7 @@ $(window).load(function() {
 					      <a href="#"><img src="resource/images/h16.jpg" alt="" class="img-responsive zoom-img"></a>
 					   </div>
 						<div class="home-product-bottom">
-								<h3><a href="#">Smart Shopping</a></h3>
+								<h3><a href="myCart">Smart Shopping</a></h3>
 								<p>Explore Now</p>						
 						</div>
 						<div class="srch">
@@ -172,5 +172,3 @@ $(window).load(function() {
 <!--footer end here-->
 </body>
 </html>
-
-

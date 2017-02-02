@@ -131,9 +131,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													
 													<c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
 													
-														<li><a href="<c:url value="/user/cart"/>">Cart</a></li>
+														<li><a href="<c:url value="/user/cart"/>">CART</a></li>
 													    
-													    <li class="grid"><a class="color2" href="<c:url value="/j_spring_security_logout"/>">SIGN OUT</a>
+													   <%--  <li class="grid"><a class="color2" href="<c:url value="/j_spring_security_logout"/>">SIGN OUT</a> --%>
 												
 													    
 													</c:if>

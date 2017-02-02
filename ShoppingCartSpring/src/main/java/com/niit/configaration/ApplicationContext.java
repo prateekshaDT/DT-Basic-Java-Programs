@@ -1,4 +1,4 @@
-package com.niit.configaration;
+/*package com.niit.configaration;
 
 
 import java.util.Properties;
@@ -72,3 +72,4 @@ public class ApplicationContext {
 	
 	 
 }
+*/

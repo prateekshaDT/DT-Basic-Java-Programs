@@ -29,7 +29,7 @@ public class HomeController {
 		model.addObject("productList", productDAO.list());
 		
 		
-		System.out.println("inside / mapping");
+		System.out.println("inside controller ");
 
 		if(selectedProduct!=null){
 			model.addObject("selectedProduct",selectedProduct);
@@ -48,12 +48,36 @@ public class HomeController {
 	System.out.println("inside controller");
 	return "index";
 	}*/
+	
+	
 	@RequestMapping("/index")
+	public ModelAndView getPage1( @ModelAttribute("selectedProduct") final Product selectedProduct) {
+		
+		ModelAndView model=new ModelAndView("index");
+		
+		model.addObject("categoryList", categoryDAO.list());
+		model.addObject("productList", productDAO.list());
+		
+		
+		System.out.println("inside controller");
+
+		if(selectedProduct!=null){
+			model.addObject("selectedProduct",selectedProduct);
+		}
+		else
+			System.out.println("The object is null");
+		
+		return model;
+		
+	}
+	
+	
+	/*@RequestMapping("/index")
 	public String getindexpage1()
 	{
 	System.out.println("inside controller");
 	return "index";
-	}
+	}*/
 	@RequestMapping("/checkout")
 	public String getcheckoutpage()
 	{
