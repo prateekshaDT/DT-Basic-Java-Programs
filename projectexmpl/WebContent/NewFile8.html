@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="">
+
+<input type="number" ng-model="price">
+
+<p ng-show="price>1000">you will get 10% discount</p>
+
+<p ng-hide="price>=500"> No COD</p>
+</div>
+
+</body>
+</html>
