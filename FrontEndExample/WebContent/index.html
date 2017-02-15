@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+  
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script> -->
+	
+	
+  <style type="text/css">
+
+.header {
+    height:50px;
+    background-color:red;
+    border:1px solid #CCC;
+    width:100%;
+    margin:0px auto;
+}
+
+.footer {
+	position:absolute;
+   	bottom:0;
+    height:50px;
+    background-color:red;
+    border:1px solid #CCC;
+    width:100%;
+    margin:0px auto;
+}
+/* .content {
+    width:960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: 2000px;
+    margin: 70px auto;
+} */
+</style>
+
+  </head>
+  <body background="bgimg.jpg">
+  	<div class="header">
+  
+  <hr>	
+    <a href="#/">Home</a>
+   	 <a href="#/blog">Blog</a>
+    <a href="#/about">About</a>
+	<hr>
+	
+	</div>
+    <div ng-view></div>
+ </body>
+
+     <script src="lib/angular.js"></script>
+     <script src="lib/angular-route.js"></script>
+     <script src="Ex/js/app.js"></script>
+     
+     <script src="Ex/js/HomeController.js"></script>
+    <!--  <script src="Ex/js/BlogController.js"></script> -->
+     
+    
+    <div class="footer">
+    <a href="#/contact">Contact Us</a>
+    </div>
+ 
+  
+</html>
