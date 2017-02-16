@@ -1,0 +1,35 @@
+<html ng-app="spangular">
+<head>
+<title>SPAngularJs - </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<link rel="stylesheet" href="media/bootstrap.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default" ng-controller="navController">
+  <div class="container">
+    <div class="navbar-header">
+      SpangularJS
+    </div>
+    <div>
+      <ul class="nav navbar-nav"  >
+        <li ng-class="{ active: isActive('/')}">Home</li>
+        <li ng-class="{ active: isActive('/about')}">About</li>
+        <li ng-class="{ active: isActive('/page')}">Page</li> 
+        <li ng-class="{ active: isActive('/contact')}">Contact</li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+ <div class="container">
+
+  <h1 ng-bind="title"> </h1> 
+
+        
+<script src="media/angular.min.js"></script>
+<script src="media/angular-route.js"></script>
+        
+<script src="Spangular.js"></script>
+ 
+</body>
+</html>

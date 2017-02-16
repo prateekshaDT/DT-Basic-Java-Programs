@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+</head>
+<script src = "/"></script>
+<body ng-app="LoginApp" ng-controller="LoginController">
+
+User ID:
+<input type="text" ng-model="userID">Password :
+<input type="text" ng-model="password">
+
+<input type="submit" ng-click="Login()">
+
+</body>
+<script>
+var app=angular.module("loginApp", [])
+
+app.controller("loginController", function($scope)
+
+{
+
+  console.log("Enterred into login controller")
+  
+  console.log("userID:" + userID)
+  console.log("password:" + password)
+  
+  $scope.login= function()
+  {
+	  console.log("inside login function")
+	  if(userID=="niit" && password="niit")
+			  {
+		  console.log("True")
+			  }
+	  else
+		  {
+		  console.log("Invalid credentials")
+		  }
+			  }
+  }
+  
+  
+  
+  )
+  </script>
+
+</html> 
