@@ -7,17 +7,20 @@ app.config(function($routeProvider) {
   $routeProvider
 
   .when('/', {
-    templateUrl : 'Ex/view/home.html'
+    templateUrl : 'Ex/view/home.html',
+    	controller : 'HomeController'
    
   })
 
   .when('/blog', {
-    templateUrl : 'Ex/view/blog.html'
+    templateUrl : 'Ex/view/blog.html',
+    	controller : 'BlogController'
    
   })
 
   .when('/contact', {
-    templateUrl : 'Ex/view/contact.html'
+    templateUrl : 'Ex/view/contact.html',
+    controller : 'ContactController'
    
   })
   
