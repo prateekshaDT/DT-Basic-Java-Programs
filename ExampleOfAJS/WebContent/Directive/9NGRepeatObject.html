@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="categories=
+[
+
+	{name:'CG001',description:'CGDesc001'},
+	{name:'CG002',description:'CGDesc002'},
+	{name:'CG003',description:'CGDesc003'},
+	{name:'CG004',description:'CGDesc004'},
+	{name:'CG005',description:'CGDesc005'}
+]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="cg in categories">
+  {{ cg.name + ', ' + cg.description }}</li>
+</ul>
+
+</div>
+
+</body>
+<script src="../WEB-INF/lib/angular.min.js"></script>
+</html>

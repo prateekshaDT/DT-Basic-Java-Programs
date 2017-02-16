@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jobs=['Technical Manager','Software Engg','Developer']">
+  
+ Search for a Job <input type="text" ng-model="searchJob">
+  
+  
+  <ul>
+    <li ng-repeat="job in jobs | filter : searchJob">
+      {{job}}
+    </li>
+  </ul>
+</div>
+
+</body>
+<script src="../WEB-INF/lib/angular.min.js"></script>
+</html>
