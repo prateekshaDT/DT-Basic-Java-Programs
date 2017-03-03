@@ -1,4 +1,4 @@
-package com.niit.test;
+/*package com.niit.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -26,3 +26,4 @@ public class Test {
 
 
 }
+*/
