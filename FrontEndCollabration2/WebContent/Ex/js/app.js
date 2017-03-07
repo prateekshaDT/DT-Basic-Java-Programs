@@ -15,8 +15,8 @@ app.config(function($routeProvider) {
   })
 
   .when('/blog', {
-    templateUrl : 'col/blog/blog.html'/*,
-    	controller : 'BlogController'*/
+    templateUrl : 'col/blog/blog.html',
+    	controller : 'BlogController'
    
   })
 
