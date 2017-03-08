@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
   $routeProvider
 
   .when('/', {
-    templateUrl : 'col/home/index.html'
+    templateUrl : 'index.html'
    
   })
   .when('/home', {
@@ -46,6 +46,18 @@ app.config(function($routeProvider) {
   .when('/register', {
     templateUrl : 'col/register/register.html',
     controller : 'RegisterController' 	
+    	   
+  })
+  
+  .when('/adminblog', {
+    templateUrl : 'col/blog-admin/adminblog.html',
+    controller : 'AdminBlogController' 	
+    	   
+  })
+  
+  .when("/allblogs", {
+		templateUrl : "col/allblogs/allblogs.html",
+		controller : "AllBlogsController"
     	   
   })
 

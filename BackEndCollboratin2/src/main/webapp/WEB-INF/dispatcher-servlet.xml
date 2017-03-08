@@ -69,14 +69,14 @@
 
 
 
-</beans>  -->
+</beans>   -->
 
 
 
 
 
 
-<beans xmlns="http://www.springframework.org/schema/beans"
+ <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
@@ -140,6 +140,6 @@
 			<websocket:sockjs></websocket:sockjs>
 		</websocket:stomp-endpoint>
 		<websocket:simple-broker prefix="/topic" />
-	</websocket:message-broker>
- -->
-</beans> 
+	</websocket:message-broker> -->
+
+</beans>  

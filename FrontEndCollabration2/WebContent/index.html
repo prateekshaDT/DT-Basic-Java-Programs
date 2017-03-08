@@ -120,7 +120,7 @@ li.dropdown {
   
   	<ul>
    <li> <a href="#/home">Home</a></li>
-    <li>	 <a href="#/blog">Blog</a></li> 
+    <!-- <li>	 <a href="#/blog">Blog</a></li>  -->
   <li>  <a href="#/about">About</a></li>
     <!-- <li> <a href="#/login">Login</a></li> -->
     <li><a ng-show="login" class="page-scroll" href="#login">Login</a></li> 
@@ -128,9 +128,12 @@ li.dropdown {
 								href="#register">Register</a></li>
 								<li><a href="#logout" ng-show="logout"><i
 									class="page-scroll"></i> Logout</a></li>
-   <li><a ng-show="blog" class="page-scroll" href="#blog">Blog</a></li>
-  <!--  <li> <a href="#/register" ng-show="register">Register</a></li> -->
-    <!-- <li> <a href="#/logout">Logout</a></li> -->
+   <li><a ng-show="blogs" class="page-scroll" href="#blog">Blog</a></li>
+   <li><a href="#adminblog" ng-show="adminblog"><i
+									class="page-scroll"></i> Blog</a></li>
+   <li><a href="#allblogs" ng-show="allblogs"><i
+									class="page-scroll"></i> AllBlogs</a></li>
+  
    <li class="dropdown">
     </li>
     </ul>
@@ -440,6 +443,8 @@ li.dropdown {
       <script src="col/login/LoginController.js"></script>
        <script src="col/login/LogoutController.js"></script>
        <script src="col/blog/BlogController.js"></script>
+       <script src="col/blog-admin/AdminBlogController.js"></script>
+       <script src="col/allblogs/AllBlogsController.js"></script>
        
        
        

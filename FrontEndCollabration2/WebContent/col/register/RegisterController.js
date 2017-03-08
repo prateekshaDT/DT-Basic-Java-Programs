@@ -12,7 +12,7 @@ app.controller('RegisterController', ['$scope', 'fileUpload', function($scope,fi
        console.log("name",name);
        console.log('file is '/*+file*/ );
        console.dir(file);
-       var uploadUrl = "http://localhost:8080/BackEndCollboratin2/fileUpload";
+       var uploadUrl = "http://localhost:8084/BackEndCollboratin2/fileUpload";
        fileUpload.uploadFileToUrl(file,uploadUrl,name,password,mobile);
        $scope.message="You are sucessfully registered!!!!";
     };

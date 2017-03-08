@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 public class Blog {
-	@Id@GeneratedValue
+	@Id
+	@GeneratedValue
 	private int blog_id;
 	
 	private String title;

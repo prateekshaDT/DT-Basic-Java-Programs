@@ -1,7 +1,7 @@
 console.log("Entered the Logoutcontroller");
 app.controller('LogoutController', function($scope, $rootScope, $http,
 		$cookieStore) {
-	$http.post("http://localhost:8080/BackEndCollboratin2/logout/"
+	$http.post("http://localhost:8084/BackEndCollboratin2/logout/"
 			+ $rootScope.uname);
 	$rootScope.uname = null;
 	console.log("username:" + $rootScope.uname);
