@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name="C_User")
+/*@Table(name="C_User")*/
 @Component
 public class Users {
 

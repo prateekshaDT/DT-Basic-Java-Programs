@@ -52,6 +52,39 @@ app.config(function($routeProvider) {
     controller : 'RegisterController'
    
   })
+  
+   .when('/adminblog', {
+    templateUrl : 'col/blog-admin/adminblog.html',
+    controller : 'AdminBlogController' 	
+    	   
+  })
+  
+  .when("/allblogs", {
+		templateUrl : "col/allblogs/allblogs.html",
+		controller : "AllBlogsController"
+    	   
+  })
+  
+  .when("/userforum", {
+		templateUrl : "col/forum/userforum.html",
+		controller : "UserForumController"
+
+	}).when("/adminforum", {
+		templateUrl : "col/forum-admin/adminforum.html",
+		controller : "AdminForumController"
+
+	})
+	
+	.when("/userjobs", {
+		templateUrl : "col/jobs/userjobs.html",
+		controller : "UserJobsController"
+
+	})
+	
+	.when("/job", {
+		templateUrl : "col/job-admin/jobs.html",
+		controller : "AdminJobsController"
+	})
 
   .otherwise({redirectTo: '/'});
 });

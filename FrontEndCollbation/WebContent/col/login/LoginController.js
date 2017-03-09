@@ -10,7 +10,7 @@ app.controller("LoginController",['$cookieStore','$scope','$http','$location','$
 									password : $scope.password,
 
 								}
-								$http.post("http://localhost:8080/BackEndAjs/authenticate",logi).then(
+								$http.post("http://localhost:8014/BackEndAjs/authenticate",logi).then(
 												function(response) {
 													console.log("result data:"
 															+ response.data);

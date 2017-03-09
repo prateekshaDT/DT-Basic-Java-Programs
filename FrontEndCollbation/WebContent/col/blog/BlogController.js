@@ -20,7 +20,7 @@ app.controller("BlogController",function($scope,$http,$rootScope)
 					
 					console.log(" in blog controller");
 					console.log("name in allblogs:"+$rootScope.uname)
-					$http.get("http://localhost:8080/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
+					$http.get("http://localhost:8014/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
 							    .then(function (response) {
 							    	
 							    	$scope.blogs = response.data;
@@ -38,8 +38,8 @@ app.controller("BlogController",function($scope,$http,$rootScope)
 											postedby:$rootScope.uname
 							 		};
 									console.log("title:"+dataObj);
-									 var res = $http.post('http://localhost:8080/BackEndAjs/addBlog',dataObj);
-									 $http.get("http://localhost:8080/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
+									 var res = $http.post('http://localhost:8014/BackEndAjs/addBlog',dataObj);
+									 $http.get("http://localhost:8014/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
 								 	    .then(function (response) {$scope.blogs = response.data;});
 								 		res.success(function(data, status, headers, config) {
 								 			$scope.message = "Blog added successfully" ;
@@ -64,8 +64,8 @@ app.controller("BlogController",function($scope,$http,$rootScope)
 							description:$scope.blogedit.description,
 							postedby:$rootScope.uname
 						}
-					$http.put("http://localhost:8080/BackEndAjs/updateBlog",edit);
-					$http.get("http://localhost:8080/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
+					$http.put("http://localhost:8014/BackEndAjs/updateBlog",edit);
+					$http.get("http://localhost:8014/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
 					    .then(function (response) {
 					    	
 					    	$scope.blogs = response.data;
@@ -79,8 +79,8 @@ app.controller("BlogController",function($scope,$http,$rootScope)
 						{
 					blog_id:$scope.blogedit.blog_id
 						}
-				$http.post("http://localhost:8080/BackEndAjs/deleteBlog",del);
-					$http.get("http://localhost:8080/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
+				$http.post("http://localhost:8014/BackEndAjs/deleteBlog",del);
+					$http.get("http://localhost:8014/BackEndAjs/viewMyBlogs/"+$rootScope.uname)
 					    .then(function (response) {
 					    	
 					    	$scope.blogs = response.data;
