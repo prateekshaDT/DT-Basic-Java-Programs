@@ -1,6 +1,6 @@
 console.log(" Entered adminforum controller");
 app.controller("AdminForumController", function($scope, $http, $rootScope) {
-	$rootScope.home = false;
+	$rootScope.home = true;
 	$rootScope.login = false;
 	$rootScope.register = false;
 	$rootScope.jobs = true;
@@ -16,7 +16,7 @@ app.controller("AdminForumController", function($scope, $http, $rootScope) {
 
 	console.log(" in adminforum controller");
 
-	$http.get("http://localhost:8014/BackEndAjs/viewForums").then(
+	$http.get("http://localhost:8080/BackEndAjs/viewForums").then(
 			function(response) {
 
 				$scope.forums = response.data;
@@ -33,9 +33,9 @@ app.controller("AdminForumController", function($scope, $http, $rootScope) {
 
 		};
 		console.log("title:" + dataObj);
-		var res = $http.post('http://localhost:8014/BackEndAjs/addForum',
+		var res = $http.post('http://localhost:8080/BackEndAjs/addForum',
 				dataObj);
-		$http.get("http://localhost:8014/BackEndAjs/viewForums").then(
+		$http.get("http://localhost:8080/BackEndAjs/viewForums").then(
 				function(response) {
 					$scope.forums = response.data;
 				});
@@ -62,8 +62,8 @@ app.controller("AdminForumController", function($scope, $http, $rootScope) {
 			answer : $scope.forumstatus.answer,
 			status : true
 		}
-		$http.put("http://localhost:8014/BackEndAjs/updateForum", edit);
-		$http.get("http://localhost:8014/BackEndAjs/viewForums").then(
+		$http.put("http://localhost:8080/BackEndAjs/updateForum", edit);
+		$http.get("http://localhost:8080/BackEndAjs/viewForums").then(
 				function(response) {
 
 					$scope.forums = response.data;
@@ -81,13 +81,14 @@ app.controller("AdminForumController", function($scope, $http, $rootScope) {
 			answer : $scope.forumstatus.answer,
 			status : false
 		}
-		$http.put("http://localhost:8014/BackEndAjs/updateForum", edit);
-		$http.get("http://localhost:8014/BackEndAjs/viewForums").then(
+		$http.put("http://localhost:8080/BackEndAjs/updateForum", edit);
+		$http.get("http://localhost:8080/BackEndAjs/viewForums").then(
 				function(response) {
 
 					$scope.forums = response.data;
 
 					console.log("data:" + response.data);
+					$rootScope.uname;
 				});
 	}
 

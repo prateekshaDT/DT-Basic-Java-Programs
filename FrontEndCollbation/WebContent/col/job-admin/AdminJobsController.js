@@ -1,6 +1,6 @@
 app.controller("AdminJobsController",function($scope,$http,$rootScope)	
 						{	
-					$rootScope.home=false;
+					$rootScope.home=true;
 					$rootScope.login=false;
 					$rootScope.register=false;
 					$rootScope.jobs=true;
@@ -16,7 +16,7 @@ app.controller("AdminJobsController",function($scope,$http,$rootScope)
 					
 					console.log(" in jobs controller");
 					
-							 $http.get("http://localhost:8014/BackEndAjs/viewJobs")
+							 $http.get("http://localhost:8080/BackEndAjs/viewJobs")
 							    .then(function (response) {
 							    	
 							    	$scope.jobs = response.data;
@@ -35,8 +35,8 @@ app.controller("AdminJobsController",function($scope,$http,$rootScope)
 											job_description:$scope.job_description
 							 		};
 									console.log("title:"+dataObj);
-									 var res = $http.post('http://localhost:8014/BackEndAjs/addJobs',dataObj);
-									 $http.get("http://localhost:8014/BackEndAjs/viewJobs")
+									 var res = $http.post('http://localhost:8080/BackEndAjs/addJobs',dataObj);
+									 $http.get("http://localhost:8080/BackEndAjs/viewJobs")
 								 	    .then(function (response) {$scope.jobs = response.data;});
 								 		res.success(function(data, status, headers, config) {
 								 			$scope.message = data;
@@ -61,8 +61,8 @@ app.controller("AdminJobsController",function($scope,$http,$rootScope)
 							job_requirements:$scope.jobedit.job_requirements,
 							job_description:$scope.jobedit.job_description
 						}
-					$http.put("http://localhost:8014/BackEndAjs/updateJob",edit);
-					 $http.get("http://localhost:8014/BackEndAjs/viewJobs")
+					$http.put("http://localhost:8080/BackEndAjs/updateJob",edit);
+					 $http.get("http://localhost:8080/BackEndAjs/viewJobs")
 					    .then(function (response) {
 					    	
 					    	$scope.jobs = response.data;
@@ -77,13 +77,14 @@ app.controller("AdminJobsController",function($scope,$http,$rootScope)
 						{
 					job_id:$scope.jobedit.job_id
 						}
-				$http.post("http://localhost:8014/BackEndAjs/deleteJob",del);
-					 $http.get("http://localhost:8014/BackEndAjs/viewJobs")
+				$http.post("http://localhost:8080/BackEndAjs/deleteJob",del);
+					 $http.get("http://localhost:8080/BackEndAjs/viewJobs")
 					    .then(function (response) {
 					    	
 					    	$scope.jobs = response.data;
 					    	
 					    	console.log("data:"+response.data);
+					    	$rootScope.uname;
 					    });
 				}
 						});	

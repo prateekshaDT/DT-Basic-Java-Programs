@@ -8,7 +8,7 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 					$rootScope.adminblog=false;
 					$rootScope.adminforum=false;
 					$rootScope.register=false;
-					$rootScope.home=false;
+					$rootScope.home=true;
 					$rootScope.addjobs=false;
 					$rootScope.login=false;
 					$rootScope.jobs=false;
@@ -20,7 +20,7 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 					
 					console.log(" in forum controller");
 					
-							 $http.get("http://localhost:8014/BackEndAjs/viewForum")
+							 $http.get("http://localhost:8080/BackEndAjs/viewForum")
 							    .then(function (response) {
 							    	
 							    	$scope.forums = response.data;
@@ -39,8 +39,8 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 											
 							 		};
 									console.log("title:"+dataObj);
-									 var res = $http.post('http://localhost:8014/BackEndAjs/addForum',dataObj);
-									 $http.get("http://localhost:8014/BackEndAjs/viewForum")
+									 var res = $http.post('http://localhost:8080/BackEndAjs/addForum',dataObj);
+									 $http.get("http://localhost:8080/BackEndAjs/viewForum")
 								 	    .then(function (response) {$scope.forums = response.data;});
 								 		res.success(function(data, status, headers, config) {
 								 			$scope.message = "forum added successfully";
@@ -58,8 +58,8 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 									answer:$scope.answerforum.answer
 										}	
 									console.log(ans);
-									 $http.post('http://localhost:8014/BackEndAjs/answerForum',ans);
-									$http.get("http://localhost:8014/BackEndAjs/viewForum")
+									 $http.post('http://localhost:8080/BackEndAjs/answerForum',ans);
+									$http.get("http://localhost:8080/BackEndAjs/viewForum")
 								    .then(function (response) {
 								    	
 								    	$scope.forums = response.data;
@@ -71,7 +71,7 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 								{
 									$scope.answerforum=forum;
 									console.log("forumid:"+$scope.answerforum.forum_id);
-									 $http.get("http://localhost:8014/BackEndAjs/viewAnswers/"+$scope.answerforum.forum_id)
+									 $http.get("http://localhost:8080/BackEndAjs/viewAnswers/"+$scope.answerforum.forum_id)
 									    .then(function (response) {
 									    	
 									    	$scope.ansforums = response.data;
@@ -97,8 +97,8 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 							question:$scope.forumedit.question,
 							answer:$scope.forumedit.answer
 						}
-					$http.put("http://localhost:8014/BackEndAjs/updateForum",edit);
-					 $http.get("http://localhost:8014/BackEndAjs/viewForum")
+					$http.put("http://localhost:8080/BackEndAjs/updateForum",edit);
+					 $http.get("http://localhost:8080/BackEndAjs/viewForum")
 					    .then(function (response) {
 					    	
 					    	$scope.forums = response.data;
@@ -112,12 +112,13 @@ app.controller("UserForumController",function($scope,$http,$rootScope)
 						{ 
 					forum_id:$scope.forumedit.forum_id
 						}
-				$http.post("http://localhost:8014/BackEndAjs/deleteForum",del)
+				$http.post("http://localhost:8080/BackEndAjs/deleteForum",del)
 					
-					 $http.get("http://localhost:8014/BackEndAjs/viewForums")
+					 $http.get("http://localhost:8080/BackEndAjs/viewForums")
 					    .then(function (response) {
 					    	$scope.forums = response.data;
 					    	console.log("data:"+response.data);
+					    	$rootScope.uname;
 					    });
 				}
 						});	

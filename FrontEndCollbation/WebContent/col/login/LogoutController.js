@@ -1,7 +1,7 @@
 console.log("Entered the Logoutcontroller");
 app.controller('LogoutController', function($scope, $rootScope, $http,
 		$cookieStore) {
-	$http.post("http://localhost:8014/BackEndAjs/logout/"
+	$http.post("http://localhost:8080/BackEndAjs/logout/"
 			+ $rootScope.uname);
 	$rootScope.uname = null;
 	console.log("username:" + $rootScope.uname);
@@ -11,6 +11,7 @@ app.controller('LogoutController', function($scope, $rootScope, $http,
 	console.log("uname in cookie:" + $cookieStore.get('uname'));
 
 	console.log("logout controller called");
+	$rootScope.uname;
 	$rootScope.userhome = false;
 	$rootScope.login = true;
 	$rootScope.register = true;

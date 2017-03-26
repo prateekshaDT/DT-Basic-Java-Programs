@@ -6,7 +6,7 @@ app.controller("UserJobsController",function($scope,$http,$rootScope)
 					$rootScope.adminblog=false;
 					$rootScope.adminforum=false;
 					$rootScope.register=false;
-					$rootScope.home=false;
+					$rootScope.home=true;
 					$rootScope.addjobs=false;
 					$rootScope.login=false;
 					$rootScope.jobs=false;
@@ -18,11 +18,17 @@ app.controller("UserJobsController",function($scope,$http,$rootScope)
 					
 					console.log(" in userjobs controller");
 					
-							 $http.get("http://localhost:8014/BackEndAjs/viewJobs")
+							 $http.get("http://localhost:8080/BackEndAjs/viewJobs")
 							    .then(function (response) {
 							    	
 							    	$scope.jobs = response.data;
 							    	
 							    	console.log("data:"+response.data);
+							    	$rootScope.uname;
+							    	
 							    });
+							 $scope.applyJob=function(job)
+							 {
+								 $scope.message="you have successfully applied for the job";
+							 };
 						});	

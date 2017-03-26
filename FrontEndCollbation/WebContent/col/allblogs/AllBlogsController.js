@@ -6,7 +6,7 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 					$rootScope.adminblog=false;
 					$rootScope.adminforum=false;
 					$rootScope.register=false;
-					$rootScope.home=false;
+					$rootScope.home=true;
 					$rootScope.addjobs=false;
 					$rootScope.login=false;
 					$rootScope.jobs=false;
@@ -18,7 +18,7 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 					
 					
 					console.log("username in allblog controller:"+$rootScope.uname);
-							 $http.get("http://localhost:8014/BackEndAjs/viewAllBlogs")
+							 $http.get("http://localhost:8080/BackEndAjs/viewAllBlogs")
 							    .then(function (response) {
 							    	
 							    	$scope.blogs = response.data;
@@ -46,8 +46,8 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 									}
 								console.log("data in like:"+like);
 								console.log("postedby:"+$rootScope.uname);
-								 $http.put('http://localhost:8014/BackEndAjs/updateBlog',like);
-								 $http.get("http://localhost:8014/BackEndAjs/viewBlogs")
+								 $http.put('http://localhost:8080/BackEndAjs/updateBlog',like);
+								 $http.get("http://localhost:8080/BackEndAjs/viewBlogs")
 								    .then(function (response) {
 								    	
 								    	$scope.blogs = response.data;
@@ -62,7 +62,7 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 								 console.log("in viewcomments fn");
 								 $scope.viewcomments=allblogs;
 								 console.log("blogid:"+$scope.viewcomments.blog_id);
-					 $http.get("http://localhost:8014/BackEndAjs/viewComments/"+$scope.viewcomments.blog_id)
+					 $http.get("http://localhost:8080/BackEndAjs/viewComments/"+$scope.viewcomments.blog_id)
 								    .then(function (response) {
 								    	
 								    	$scope.comments = response.data;
@@ -85,8 +85,8 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 									name:$rootScope.uname,
 									comment:$scope.commentblog.Comment
 								};
-							$http.post('http://localhost:8014/BackEndAjs/addComment',comment);
-						 $http.get("http://localhost:8014/BackEndAjs/viewAllBlogs")
+							$http.post('http://localhost:8080/BackEndAjs/addComment',comment);
+						 $http.get("http://localhost:8080/BackEndAjs/viewAllBlogs")
 							    .then(function (response) {
 							    
 							    	$scope.blogs = response.data;
@@ -95,6 +95,7 @@ app.controller("AllBlogsController",function($scope,$http,$rootScope,$route)
 							    	console.log("data:"+response.data);
 							    });
 							 console.log("out of addcomment");
+							 $rootScope.uname;
 						}
 						
 						});

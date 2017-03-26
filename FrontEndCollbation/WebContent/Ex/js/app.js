@@ -6,15 +6,21 @@ var app = angular.module('myApp', ['ngRoute' , 'ngCookies']);
 app.config(function($routeProvider) {
   $routeProvider
 
-  .when('/', {
-    templateUrl : 'col/home/index.html'/*,
-    	controller : 'HomeController'*/
+  /*.when('/', {
+    templateUrl : 'col/home/index.html',
+    	controller : 'HomeController'
+   
+  })*/
+
+  .when('/home', {
+    templateUrl : 'col/home/home.html',
+    	controller : 'UserHomeController'
    
   })
-
-  .when('/', {
-    templateUrl : 'col/home/home.html'/*,
-    	controller : 'HomeController'*/
+  
+   .when('/Adminhome', {
+    templateUrl : 'col/home/Adminhome.html'
+    	/*controller : 'UserHomeController'*/
    
   })
   
@@ -85,6 +91,19 @@ app.config(function($routeProvider) {
 		templateUrl : "col/job-admin/jobs.html",
 		controller : "AdminJobsController"
 	})
+	
+	.when("/friendslist", {
+		templateUrl : "col/friend/friendslist.html",
+		controller : 'FriendsListController'
+
+	})
+	
+   .when('/chat', {
+      templateUrl : 'col/chat/chat.html',
+      controller : 'chatController' 	
+    	   
+  })
+
 
   .otherwise({redirectTo: '/'});
 });

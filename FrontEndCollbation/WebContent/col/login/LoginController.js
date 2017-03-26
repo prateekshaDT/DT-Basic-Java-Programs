@@ -10,7 +10,7 @@ app.controller("LoginController",['$cookieStore','$scope','$http','$location','$
 									password : $scope.password,
 
 								}
-								$http.post("http://localhost:8014/BackEndAjs/authenticate",logi).then(
+								$http.post("http://localhost:8080/BackEndAjs/authenticate",logi).then(
 												function(response) {
 													console.log("result data:"
 															+ response.data);
@@ -26,7 +26,7 @@ app.controller("LoginController",['$cookieStore','$scope','$http','$location','$
 														$rootScope.adminblog = false;
 														$rootScope.adminforum = false;
 														$rootScope.register = false;
-														$rootScope.home = false;
+														$rootScope.home = true;
 														$rootScope.addjobs = false;
 														$rootScope.login = false;
 														$rootScope.jobs = false;
@@ -59,11 +59,11 @@ app.controller("LoginController",['$cookieStore','$scope','$http','$location','$
 														$scope.name = "";
 														$scope.password = "";
 														$scope.message = "username/password incorrect";
-														$location.path('/');
+														$location.path('/login');
 													}
 													if (r == 2) {
 														$rootScope.uname = $scope.name;
-														$rootScope.home = false;
+														$rootScope.home = true;
 														$rootScope.login = false;
 														$rootScope.register = false;
 														$rootScope.jobs = true;
@@ -77,7 +77,7 @@ app.controller("LoginController",['$cookieStore','$scope','$http','$location','$
 														$rootScope.userforum = false;
 														$rootScope.userjobs = false;
 														$location
-																.path('/adminHome');
+																.path('/Adminhome');
 													}
 												});
 							}

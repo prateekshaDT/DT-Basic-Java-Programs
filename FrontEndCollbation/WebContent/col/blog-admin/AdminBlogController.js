@@ -2,7 +2,7 @@
 
 app.controller("AdminBlogController",function($scope,$http,$rootScope)	
 						{	
-					$rootScope.home=false;
+					$rootScope.home=true;
 					$rootScope.login=false;
 					$rootScope.register=false;
 					$rootScope.jobs=true;
@@ -18,7 +18,7 @@ app.controller("AdminBlogController",function($scope,$http,$rootScope)
 					
 					console.log(" in adminblog controller");
 					
-							 $http.get("http://localhost:8014/BackEndAjs/viewBlogs")
+							 $http.get("http://localhost:8080/BackEndAjs/viewBlogs")
 							    .then(function (response) {
 							    	
 							    	$scope.blogs = response.data;
@@ -47,8 +47,8 @@ app.controller("AdminBlogController",function($scope,$http,$rootScope)
 							status:true
 						}
 					
-					$http.put("http://localhost:8014/BackEndAjs/updateBlog",edit);
-					 $http.get("http://localhost:8014/BackEndAjs/viewBlogs")
+					$http.put("http://localhost:8080/BackEndAjs/updateBlog",edit);
+					 $http.get("http://localhost:8080/BackEndAjs/viewBlogs")
 					    .then(function (response) {
 					    	
 					    	$scope.blogs = response.data;
@@ -69,13 +69,14 @@ app.controller("AdminBlogController",function($scope,$http,$rootScope)
 							postedby:$scope.blogstatus.postedby,
 							status:false
 						}
-					$http.put("http://localhost:8014/BackEndAjs/updateBlog",edit);
-					 $http.get("http://localhost:8014/BackEndAjs/viewBlogs")
+					$http.put("http://localhost:8080/BackEndAjs/updateBlog",edit);
+					 $http.get("http://localhost:8080/BackEndAjs/viewBlogs")
 					    .then(function (response) {
 					    	
 					    	$scope.blogs = response.data;
 					    	
 					    	console.log("data:"+response.data);
+					    	$rootScope.uname;
 					    });
 				}
 				

@@ -12,7 +12,7 @@ app.controller('RegisterController', ['$scope', 'fileUpload', function($scope,fi
        console.log("name",name);
        console.log('file is '/*+file*/ );
        console.dir(file);
-       var uploadUrl = "http://localhost:8014/BackEndAjs/fileUpload";
+       var uploadUrl = "http://localhost:8080/BackEndAjs/fileUpload";
        fileUpload.uploadFileToUrl(file,uploadUrl,name,password,mobile);
        $scope.message="You are sucessfully registered!!!!";
     };
@@ -34,7 +34,7 @@ app.directive('fileModel', ['$parse', function ($parse) {
     };
  }]);
 
-app.service('fileUpload', ['$http','$location', function ($http,$scope,$location) {
+app.service('fileUpload', ['$http','$location', function ($http,$scope,$location) {   //builting
     this.uploadFileToUrl = function(file,uploadUrl,name,password,mobile){
        var fd = new FormData();
        fd.append('file', file);

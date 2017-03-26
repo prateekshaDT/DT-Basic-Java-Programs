@@ -1,4 +1,5 @@
-<!-- <head>
+Welcome.{{uname}}
+<head>
 <style>
 button[type=button] {
      background-color: #4d79ff;
@@ -30,10 +31,10 @@ border-radius: 5px;
 	<button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#friends" ng-click="findfriends()">
 		Find Friends</button> 
 	
-		<img class="img-responsive" src="images/{{uname}}.jpg" alt="Chania" style="width: 20%;height: 30%;border-radius: 50%;">
+		<img class="img-responsive" src="{{uname}}.jpg" alt="Chania" style="width: 20%;height: 30%;border-radius: 50%;">
 	<h5 style="text-align: left;">Welcome, {{uname}}</h5>
 	
- 	Modal 
+ <!-- 	Modal --> 
 	<div class="modal fade" id="friends" role="dialog">
 		<div class="modal-dialog">
 
@@ -49,7 +50,7 @@ border-radius: 5px;
 		<tbody>
 			<tr ng-repeat=" user in friends">
 				<td>{{user.name}}</td>
-				<td><img src="images/{{user.name}}.jpg" alt="me" style="width:150px;height:150px;border-radius: 50%;">
+				<td><img src="{{user.name}}.jpg" alt="me" style="width:150px;height:150px;border-radius: 50%;">
 			</td>
 			<td><button type="button" class="btn btn-primary btn-sm "
 						data-toggle="modal" data-target="#" ng-disabled="isDisabled"
@@ -67,4 +68,4 @@ border-radius: 5px;
 	 
 </div>
 
-</body> -->
+</body>
